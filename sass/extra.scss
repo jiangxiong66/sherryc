@@ -59,6 +59,20 @@ code {
   white-space: nowrap;
 }
 
+figure {
+  text-align: center;
+  padding: .2em;
+  border: 1px solid #ddd;
+}
+
+figcaption {
+  text-align: center;
+}
+
+img {
+  max-width: 100%;
+}
+
 .topic {
   padding: .3em;
   a {
