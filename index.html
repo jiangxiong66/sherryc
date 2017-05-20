@@ -27,8 +27,30 @@
         <li>
           <a class="sidebar-link catelog-active">第 0 章</a>
           <ul class="sub-menu">
-            <li><a href="#preface" class="section-link catelog-active">序</a></li>
-            <li><a class="section-link catelog-active">关于计算机科学</a></li>
+            <li><a href="#preface" class="section-link catelog-active">关于此系列文章</a></li>
+            <li><a class="section-link">关于计算机科学</a></li>
+            <li><a class="section-link" href="">C 语言简介</a></li>
+            <li><a class="section-link" href="">配置C语言开发运行环境</a></li>
+            <li><a class="section-link" href="">Hello world</a></li>
+          </ul>
+        </li>
+        <li>
+          <a class="sidebar-link" href="">第 1 章</a>
+          <ul>
+            <li><a href="#preface" class="section-link">变量</a></li>
+            <li><a href="#preface" class="section-link">if else</a></li>
+            <li><a href="#preface" class="section-link">while 循环</a></li>
+            <li><a href="#preface" class="section-link">for 循环</a></li>
+            <li><a href="#preface" class="section-link">函数</a></li>
+          </ul>
+        </li>
+        <li>
+          <a class="sidebar-link" href="">第 2 章</a>
+          <ul>
+            <li><a href="#preface" class="section-link">数组</a></li>
+            <li><a href="#preface" class="section-link">内存模型</a></li>
+            <li><a href="#preface" class="section-link">算法</a></li>
+            <li><a href="#preface" class="section-link">时间复杂度</a></li>
           </ul>
         </li>
       </ul>
@@ -39,6 +61,35 @@
         <h1 id="preface">第 0 章</h1>
         <div id="preface" class="topic">
           <h2>序</h2>
+          <p>关于此系列文章</p>
+          <p>此系列文章主要面向没有编程经验的初学者，我们希望通过介绍如何使用C语言设计程序，使读者了解计算机的结构和运行原理，了解C语言的基本语法和一些程序设计的best practice，掌握使用分解和抽象解决问题的方法，为读者进一步学习计算机专业知识奠定基础。</p>
+          <p>此系列文章主要包含以下内容</p>
+          <ul style="list-style-type: decimal;">
+            <li>C 语言开发及运行环境的配置</li>
+            <li>变量和内存模型初探</li>
+            <li>判断、循环和结构化程序</li>
+            <li>函数和程序的模块化</li>
+            <li>数组和深入内存模型</li>
+            <li>数据结构及算法简介</li>
+            <li>函数递归和递归算法</li>
+            <li>头文件和工程化方法</li>
+          </ul>
+        </div>
+
+        <div id="computer-science" class="topic">
+          <h2>计算机科学</h2>
+          <p>Computer Science（计算机科学）的人总是被别的系的人挤兑，说你们为什么要叫计算机科学系呢，因为你们不科学，所以才要在名字上硬加上科学两个字，以显示你们是有逼格的，搞的是科学，是很高端的东西。</p>
+          <p>计算机和科学两个词搭配在一起是感觉怪怪的，计算机是人发明出来的机器，怎么就科学了呢，人家汽车也是人发明出来的机器，就没有人说汽车科学是吧，只有车辆工程或汽修技术。</p>
+          <p>人们用科学这个词，往往是关于研究自然界的现象，这些现象是及时没有人类也是客观存在的，比如生物、物理、天文，这些东西我们感觉很科学，计算机怎么就科学了呢？</p>
+          <p>让我们回顾一下历史，三千年前的埃及，尼罗河周期性的洪水带来的泥土在河谷形成肥沃的农田，他们根据土地的面积大小来决定交给法老多少税收，那时的埃及人掌握了丈量土地计算面积的方法，他们发明了几何。从三千年后的今天来看，他们发明几何最大的意义并不是掌握了测量土地面积的工具，而是找到了描述点、线、面关系的方法，从此开始人类便能够系统探索关于空间的知识。</p>
+          <p>计算机包含有形的硬件和无形的程序软件，程序是抽象的东西，它是一系列硬件能执行的操作指令，计算机科学便是关于怎样用这些抽象的东西，程序、软件描述问题解决问题的学科。</p>
+        </div>
+
+        <div id="computer-father" class="topic">
+          <h2>计算机他爹和冯诺依曼体系</h2>
+          <p>冯诺依曼，计算机之父，他并没有发明电脑，也没有制造电脑。二战时期美军让宾夕法尼亚大学制造一台计算炮弹弹道的计算器，这台机器叫ENIAC，冯诺依曼当时在造原子弹，也需要算大量的数据，所以就去宾大把ENIAC找来用了一下，差不多在同一时期，美国还有另外一台电子计算器叫Mark I，冯诺依曼也去试用了一把。</p>
+          <p>用完以后冯老作了一个总结，他说，计算机应该这样造，它应该采用二进制，它应该包含运算器、控制器、存储器和输入输出设备五个组成部分，最重要的一点，它应该储存程序</p>
+          <p>储存程序，这一点在当时大概只有外星人能想到，你现在会觉得在电脑上点两下网易云音乐就可以放音乐，点两下QQ就可以上网和人聊天是很自然的事。其实这是一件很逆天的事情，一台机器有A功能，你没给他换任何零件，只是告诉了它一串0和1写成的天书，啪，它就有B功能了，老师傅都惊呆了。让Mark I算10+100再算10*100可是要拔一堆电线再新插一堆电线才能完成这个华丽的转身。</p>
         </div>
       </div>
     </div>
