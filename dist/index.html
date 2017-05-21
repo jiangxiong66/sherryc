@@ -27,11 +27,13 @@
         <li>
           <a class="sidebar-link catelog-active">第 0 章</a>
           <ul class="sub-menu">
-            <li><a href="#preface" class="section-link catelog-active">关于此系列文章</a></li>
-            <li><a href="#computer-science" class="section-link">关于计算机科学</a></li>
-            <li><a href="#computer-father" class="section-link" href="">C 语言简介</a></li>
-            <li><a class="section-link" href="">配置C语言开发运行环境</a></li>
-            <li><a class="section-link" href="">Hello world</a></li>
+            <li><a class="section-link catelog-active" href="#preface">关于此系列文章</a></li>
+            <li><a class="section-link" href="#computer-science">关于计算机科学</a></li>
+            <li><a class="section-link" href="#computer-father">冯诺依曼体系</a></li>
+            <li><a class="section-link" href="#system-config">配置C语言开发运行环境</a></li>
+            <li><a class="section-link" href="#hello-world">Hello world !</a></li>
+            <li><a class="section-link" href="#c-structure">C程序的结构</a></li>
+            <li><a class="section-link" href="#chapter0-exercise">习题</a></li>
           </ul>
         </li>
         <li>
@@ -165,7 +167,7 @@
   This program prints the message "Hello world" on the screen.
 */
 
-#include &lg;iostream&gt;
+#include &lt;iostream&gt;
 
 int main() {
   std::cout << "Hello world";
@@ -225,6 +227,56 @@ int main() {
               </figure>
             </li>
           </ul>
+        </div>
+        <div id="c-structure" class="topic">
+          <h2>C程序的结构</h2>
+          <p>上面我们已经编写了我们的第一个C语言程序Hello World，并且在Dev C++中编译运行了该程序。这个程序的功能很简单，就是在屏幕上输出一行字“Hello world”。几乎每一本C语言的书都会以这个程序作为第一个示例程序，这是C语言界的一个传统，这个程序是C语言的发明者Brian Kernighan和Denis Ritchie在它们的著作《The C Programming Language》里展示的第一个示例程序，所以几乎所有后来编写的C语言的书籍都会使用这个示例程序向这两位发明者表示敬意。</p>
+          <p>把Hello world这个程序做为第一个示例程序还有另外几个很实际的原因，这个程序很短小，但所谓麻雀虽小五脏俱全，通过这个程序，读者可以弄清楚程序编码、编译、运行整个流程，读者在这个过程可以熟悉自己的计算机软件环境。通过这个程序，读者可以了解一个C程序的大致组成部分和结构。</p>
+          <p>下面让我们再来回顾一下Hello world这个程序，我们先来观察一下整个程序的结构。</p>
+          <figure>
+            <picture>
+              <img src="img/hello-structure.png" alt="Hello world structure analysis">
+            </picture>
+            <figcaption>Hello world 程序结构</figcaption>
+          </figure>
+          <p>整个Hello world 程序包含三个部分。</p>
+          <p>第一个部分是程序注释，C语言中<code>/*</code>和<code>*/</code>之间的内容为注释（Comment），注释部分在程序中是没有功能的，它不是给机器看的而是给人阅读的，注释可以方便别人理解你写的程序，也方便自己以后理解现在的程序。写好注释是造福别人也是造福自己，当你编写复杂的代码时，你要相信很可能过几天以后你自己也很难读懂你现在的代码，写好注释吧。</p>
+          <p>第二部分<code>#include &lt;iostream&gt;</code>是引入了一个名为<code>iostream</code>（Input Output Stream）的头文件，这个头文件是C语言中与输入输出相关的库，引入了这个头文件，我们便可以在程序中使用这个库里定义好的东西，例如main函数中用到了<code>std::cout</code></p>
+          <p>第三部分有4行代码，这段代码定义了一个名为<code>main</code>的函数，这个函数的返回值类型是<code>int</code>(integer 整数)，main后面有一对小括号<code>()</code>，括号里面表示的是这个函数接受的参数，这对括号里面没有东西，是空的，表示这个main函数不需要接受参数。</p>
+          <p>小括号后面跟了一对花括号<code>{}</code>，花括号中间包含了两行代码，第一行代码<code>std::cout << "Hello world";</code>这句代码的作用就是把<code>Hello world</code>输出到电脑屏幕上</p>
+          <p>后面一行代码<code>return 0;</code>表示函数执行到此处返回一个整数0，函数运行结束。</p>
+          <div class="exercise" id="chapter0-exercise">
+            <h3>实验题</h3>
+            <ul>
+              <li>
+                <p class="question">把代码中的main换成其他的名字，观察是否能编译是否能运行？</p>
+                <p class="answer">在Dev C++中不能通过编译。main函数是c语言程序的入口，c语言程序运行时会从main函数开始执行，main在一个 <em>完整</em> 的程序中有且只有一个。</p>
+              </li>
+              <li>
+                <p class="question">把代码中的空白字符删掉，观察是否能编译是否能运行？哪些字符上去后程序还可以正常编译运行？</p>
+                <p class="answer"></p>
+              </li>
+              <li>
+                <p class="question">把代码<code>std::cout << "Hello world";</code>一行删去，观察程序编译运行的结果如何？</p>
+                <p class="answer"></p>
+              </li>
+              <li>
+                <p class="question">把<code>"Hello world"</code>的双引号删掉，看代码能否编译运行？</p>
+                <p class="answer">不能通过编译，"Hello world"这个整体表示一个字符串常量</p>
+              </li>
+            </ul>
+            <h3>知识回顾</h3>
+            <ul>
+              <li><p class="question">计算机之父是谁，他设计建造了哪台计算机？他为什么被公认为计算机之父？</p></li>
+              <li><p class="question">内存和硬盘有什么不同？</p></li>
+              <li><p class="question">算法是什么？算法有什么特点？</p></li>
+              <li><p class="question">为什么人们把C语言称之为高级语言？</p></li>
+              <li><p class="question">C语言程序源代码可以执行吗？</p></li>
+              <li><p class="question">C语言程序源代码怎样才能变成可以执行的程序？</p></li>
+              <li><p class="question">Dev C++编译的快捷键是哪个？</p></li>
+              <li><p class="question">Dev C++运行的快捷键是哪个？</p></li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>

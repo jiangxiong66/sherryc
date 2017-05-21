@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url(https://fonts.googleapis.com/css?family=Lobster);
 * {
   -webkit-box-sizing: border-box;
@@ -33,6 +34,15 @@ h2 {
   font-size: 1.5em;
   before: 0.83em;
   after: 0.83em;
+  start: 0px;
+  end: 0px;
+}
+
+h3 {
+  display: block;
+  font-size: 1.3em;
+  before: 0.63em;
+  after: 0.63em;
   start: 0px;
   end: 0px;
 }
@@ -148,6 +158,22 @@ img {
 
 .experiment li {
   margin-top: 2em;
+}
+
+.exercise ul {
+  list-style-type: decimal;
+}
+
+.exercise .answer {
+  color: #ddd;
+}
+
+.exercise .answer em {
+  color: #ddd;
+}
+
+.exercise .answer:before {
+  content: "答案：";
 }
 
 header {
