@@ -130,6 +130,102 @@
             <figcaption>编译过程示意图</figcaption>
           </figure>
         </div>
+        <div id="system-config" class="topic">
+          <h2>配置C语言开发运行环境</h2>
+          <p>市面上有众多支持C语言的编译器和集成开发软件（IDE），为方便初学者学习，我们选用轻量级的Dev C++</p>
+          <p>首先，我们需要准备一台安装好windows操作系统的电脑。</p>
+          <p><strong>Step 1</strong>. 下载Dev C++  <a href="https://sourceforge.net/projects/orwelldevcpp/">Dev-Cpp 5.11 TDM-GCC 4.9.2</a></p>
+          <p><strong>Step 2</strong>. 双击下载好的安装程序按<strong>如下设置</strong>安装Dev C++软件</p>
+          <figure>
+            <picture>
+              <img src="img/dev-install.png" alt="Dev C++安装选项">
+            </picture>
+            <figcaption>Dev C++安装选项示意图</figcaption>
+          </figure>
+          <p><strong>Step 3</strong>. 启动Dev C++ 验证是否安装成功。</p>
+        </div>
+        <div id="hello-world" class="topic">
+          <h2>Hello World!</h2>
+          <p>下面我们通过一个非常简单的hello world程序介绍Dev C++的使用。</p>
+          <p>整个实验包含以下 5 个步骤：</p>
+          <p>新建文件 -> 编写C语言源程序 -> 保存源程序为.cpp文件 -> 编译 -> 运行</p>
+          <ul class="experiment">
+            <li>
+              <p><strong>Step 1.</strong>新建文件</p>
+              <figure>
+                <picture>
+                  <img src="img/new-file.png" alt="Dev C++新建文件">
+                </picture>
+                <figcaption>Dev C++新建文件</figcaption>
+              </figure>
+            </li>
+            <li>
+              <p><strong>Step 2.</strong>编写C语言源程序（可复制粘贴以下代码）</p>
+              <pre><code class="c">/*
+  This program prints the message "Hello world" on the screen.
+*/
+
+#include &lg;iostream&gt;
+
+int main() {
+  std::cout << "Hello world";
+  return 0;
+}</code></pre>
+              <figure>
+                <picture>
+                  <img src="img/source-code.png" alt="Hello world 源程序">
+                </picture>
+                <figcaption>Hello world 源程序</figcaption>
+              </figure>
+            </li>
+            <li>
+              <p><strong>Step 3.</strong>将源程序文件保存为.cpp文件</p>
+              <figure>
+                <picture>
+                  <img src="img/save-file.png" alt="保存源程序文件">
+                </picture>
+                <figcaption>保存源程序文件</figcaption>
+              </figure>
+            </li>
+            <li>
+              <p><strong>Step 4.</strong>点击编译按钮或按快捷键 <kbd>F9</kbd> 编译源程序</p>
+              <p>编译过程需要几秒钟的时间，如果源程序没有问题，Dev C++会出现下图所示的输出信息。</p>
+              <p>完成编译后，源文件所在文件夹下会生成一个.exe可执行文件</p>
+              <p>如果Dev C++的输出信息提示源程序有错误，请仔细对照检查源程序。</p>
+
+              <figure>
+                <picture>
+                  <img src="img/compilation-button.png" alt="编译按钮和运行按钮">
+                </picture>
+                <figcaption>编译按钮和运行按钮</figcaption>
+              </figure>
+
+              <figure>
+                <picture>
+                  <img src="img/compilation-result.png" alt="完成编译图示">
+                </picture>
+                <figcaption>Dev C++完成编译</figcaption>
+              </figure>
+
+              <figure>
+                <picture>
+                  <img src="img/generate-exe-file.png" alt="生成exe文件">
+                </picture>
+                <figcaption>生成exe文件</figcaption>
+              </figure>
+            </li>
+            <li>
+              <p><strong>Step 5.</strong>点击运行按钮或按快捷键 <kbd>F11</kbd> 运行程序</p>
+              <p>You did it, Congratulations !!!</p>
+              <figure>
+                <picture>
+                  <img src="img/hello-output.png" alt="Hello world">
+                </picture>
+                <figcaption>Hello world</figcaption>
+              </figure>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
