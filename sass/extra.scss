@@ -61,12 +61,18 @@ code {
 
 figure {
   text-align: center;
-  padding: .2em;
+  padding: .5em;
+  margin: .8em 0;
   border: 1px solid #ddd;
 }
 
 figcaption {
+  margin-top: 1em;
+  margin-bottom: .5em;
   text-align: center;
+  &:before {
+    content: "Figuire: ";
+  }
 }
 
 img {
@@ -121,4 +127,11 @@ img {
   font-weight: bold;
   font-family: 'Dosis', 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
   font-size: 14px;
+}
+
+.experiment {
+  list-style-type: circle;
+  li {
+    margin-top: 2em;
+  }
 }
