@@ -63,6 +63,7 @@
           <h2>序</h2>
           <p>关于此系列文章</p>
           <p>此系列文章主要面向没有编程经验的初学者，我们希望通过介绍如何使用C语言设计程序，使读者了解计算机的结构和运行原理，了解C语言的基本语法和一些程序设计的best practice，掌握使用分解和抽象解决问题的方法，为读者进一步学习计算机专业知识奠定基础。</p>
+          <p>此系列文章中包含的实验建议在安装Windows系统的计算机上完成。</p>
           <p>此系列文章主要包含以下内容</p>
           <ul style="list-style-type: decimal;">
             <li>C 语言开发及运行环境的配置</li>
@@ -96,6 +97,134 @@
             </picture>
             <figcaption>计算机结构示意图</figcaption>
           </figure>
+          <p>CPU</p>
+          <p>CPU 是计算机的大脑，它控制计算机的运行和完成计算功能。CPU的行为是由存储在计算机中的程序代码决定的。例如一个程序可以控制计算机进行两个数相加的运算。通过一些列简单的指令，计算机可以完成很复杂的任务。</p>
+          <p>现代的CPU集成在一块很小的电路上，我们称之为芯片，只有手指甲大小，里面含有上亿个可以完成简单数学计算（算加法）和逻辑计算（算与或非）的计算单元</p>
+          <p><a href="https://ark.intel.com/zh-cn/products/42917/Intel-Core-i5-750S-Processor-8M-Cache-2_40-GHz">Intel Core i5 含有7.74亿个晶体管</a></p>
+          <p><a href="https://www.zhihu.com/question/37088464/answer/77935227">人类史上令人叹为观止的极限精度制造成果有哪些？</a></p>
+          <p>Memory</p>
+          <p>计算机运行一个程序，首先需要有一个地方存储程序的指令代码，其次需要有一个地方存储运算的结果，这个地方就是主存储器，我们一般叫它内存。这是冯诺依曼1946年提出来的想法，现在我们的电脑还是这个样子。</p>
+          <p>Storage</p>
+          <p>最常用的Storage就是我们的硬盘，我们的程序、软件、游戏、小电影都存在硬盘里面。硬盘和内存都是存储设备，它们有什么不同呢？关了电脑内存里面存的东西就没了，但是硬盘断了电资料是不会丢失的。我们的电脑开机时它内部做的一件事是检查硬件是否正常，第二件事就是从硬盘上把操作系统程序拷贝到内存中运行执行，系统就起来了。在使用电脑的过程中，例如Office办公软件，你不使用这个软件的时候，它是存储在硬盘中的，你双击启动它，计算机才会把Office的程序从硬盘拷贝到内存中，然后CPU再一条一条执行内存中的Office软件指令。</p>
+          <p>I/O 设备</p>
+          <p>Input/Output deices，输入输出设备，最常用的输入设备就是键盘鼠标喽，不用多解释了。输出设备，最常用的有显示器、投影仪、打印机等。</p>
+        </div>
+        <div id="algorithm" class="topic">
+          <h2>算法</h2>
+          <p>前面我们讨论了计算机的硬件和结构方面的知识，下面我们讲一讲计算机科学，如何用计算机解决问题。算法，我们可以简单理解为解决问题的方法，比如我们在上小学的时候都学过的列竖式算乘法，就是一个算法。为了更好的理解算法，我们来尝试一下给算法下个定义。算法要能解决问题，它应当要能够被准确的表达，没有歧义，让人们能够理解它的每一个步骤；其次，一个算法应当是有效的，里面每一个步骤都能被执行；最后，一个算法应当是有限的，在一定的步骤后它能停下来得到结果。</p>
+          <p>总结一下，一个算法应当满足以下三个要求：</p>
+          <ul>
+            <li><em><strong>Clearly</strong></em> and unambiguously defined</li>
+            <li><em><strong>Effective</strong></em>, in the sense that its steps are excutable.</li>
+            <li><em><strong>Finite</strong></em>, in the sense that it terminates after a bounded number of steps.</li>
+          </ul>
+        </div>
+        <div id="programming-language" class="topic">
+          <h2>程序语言和编译</h2>
+          <p>用计算机解决问题包含两个步骤，首先我们需要设计出解决这个问题的算法，这个过程我们称之为算法设计（algorithmic design）；然后我们还要把这个算法用计算机能够理解运行的程序语言写出来，这个过程称之为编码（coding）。</p>
+          <p>程序语言有很多，列如C、Python、Javascript等等，在这个系列文章中我们主要讨论C程序语言。C语言是一种高级程序语言，为什么叫高级程序语言呢？因为它可以在各种计算机上运行，比如苹果Mac、IBM PC、iPad、安卓手机等等，其实这些不同的计算机用的CPU不同，各自有各自的机器语言，机器语言是低级语言，安卓手机的机器语言在ipad上可以运行不了的。为什么C语言可以在各种机器上运行呢？因为C语言代码在变成最终的可执行代码的过程中经历了一个编译的过程。编译的过程很复杂，通俗的解释，我们用C语言写的代码通常放在一个.c的文件中，让后我们使用编译器把编写好的.c文件转化成.exe的文件，这个.exe的文件就是机器可执行的文件。</p>
+          <figure>
+            <picture>
+              <img src="img/compilation.png" alt="编译过程示意图">
+            </picture>
+            <figcaption>编译过程示意图</figcaption>
+          </figure>
+        </div>
+        <div id="system-config" class="topic">
+          <h2>配置C语言开发运行环境</h2>
+          <p>市面上有众多支持C语言的编译器和集成开发软件（IDE），为方便初学者学习，我们选用轻量级的Dev C++</p>
+          <p>首先，我们需要准备一台安装好windows操作系统的电脑。</p>
+          <p><strong>Step 1</strong>. 下载Dev C++  <a href="https://sourceforge.net/projects/orwelldevcpp/">Dev-Cpp 5.11 TDM-GCC 4.9.2</a></p>
+          <p><strong>Step 2</strong>. 双击下载好的安装程序按<strong>如下设置</strong>安装Dev C++软件</p>
+          <figure>
+            <picture>
+              <img src="img/dev-install.png" alt="Dev C++安装选项">
+            </picture>
+            <figcaption>Dev C++安装选项示意图</figcaption>
+          </figure>
+          <p><strong>Step 3</strong>. 启动Dev C++ 验证是否安装成功。</p>
+        </div>
+        <div id="hello-world" class="topic">
+          <h2>Hello World!</h2>
+          <p>下面我们通过一个非常简单的hello world程序介绍Dev C++的使用。</p>
+          <p>整个实验包含以下 5 个步骤：</p>
+          <p>新建文件 -> 编写C语言源程序 -> 保存源程序为.cpp文件 -> 编译 -> 运行</p>
+          <ul class="experiment">
+            <li>
+              <p><strong>Step 1.</strong>新建文件</p>
+              <figure>
+                <picture>
+                  <img src="img/new-file.png" alt="Dev C++新建文件">
+                </picture>
+                <figcaption>Dev C++新建文件</figcaption>
+              </figure>
+            </li>
+            <li>
+              <p><strong>Step 2.</strong>编写C语言源程序（可复制粘贴以下代码）</p>
+              <pre><code class="c">/*
+  This program prints the message "Hello world" on the screen.
+*/
+
+#include &lg;iostream&gt;
+
+int main() {
+  std::cout << "Hello world";
+  return 0;
+}</code></pre>
+              <figure>
+                <picture>
+                  <img src="img/source-code.png" alt="Hello world 源程序">
+                </picture>
+                <figcaption>Hello world 源程序</figcaption>
+              </figure>
+            </li>
+            <li>
+              <p><strong>Step 3.</strong>将源程序文件保存为.cpp文件</p>
+              <figure>
+                <picture>
+                  <img src="img/save-file.png" alt="保存源程序文件">
+                </picture>
+                <figcaption>保存源程序文件</figcaption>
+              </figure>
+            </li>
+            <li>
+              <p><strong>Step 4.</strong>点击编译按钮或按快捷键 <kbd>F9</kbd> 编译源程序</p>
+              <p>编译过程需要几秒钟的时间，如果源程序没有问题，Dev C++会出现下图所示的输出信息。</p>
+              <p>完成编译后，源文件所在文件夹下会生成一个.exe可执行文件</p>
+              <p>如果Dev C++的输出信息提示源程序有错误，请仔细对照检查源程序。</p>
+
+              <figure>
+                <picture>
+                  <img src="img/compilation-button.png" alt="编译按钮和运行按钮">
+                </picture>
+                <figcaption>编译按钮和运行按钮</figcaption>
+              </figure>
+
+              <figure>
+                <picture>
+                  <img src="img/compilation-result.png" alt="完成编译图示">
+                </picture>
+                <figcaption>Dev C++完成编译</figcaption>
+              </figure>
+
+              <figure>
+                <picture>
+                  <img src="img/generate-exe-file.png" alt="生成exe文件">
+                </picture>
+                <figcaption>生成exe文件</figcaption>
+              </figure>
+            </li>
+            <li>
+              <p><strong>Step 5.</strong>点击运行按钮或按快捷键 <kbd>F11</kbd> 运行程序</p>
+              <p>You did it, Congratulations !!!</p>
+              <figure>
+                <picture>
+                  <img src="img/hello-output.png" alt="Hello world">
+                </picture>
+                <figcaption>Hello world</figcaption>
+              </figure>
+            </li>
+          </ul>
         </div>
       </div>
     </div>
