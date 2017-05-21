@@ -39,6 +39,15 @@ h2 {
   end: 0px;
 }
 
+h3 {
+  display: block;
+  font-size: 1.3em;
+  before: 0.63em;
+  after: 0.63em;
+  start: 0px;
+  end: 0px;
+}
+
 em {
   color: #7f8c8d;
 }
@@ -133,5 +142,23 @@ img {
   list-style-type: circle;
   li {
     margin-top: 2em;
+  }
+}
+
+.exercise {
+  ul {
+    list-style-type: decimal;
+  }
+  .question {
+
+  }
+  .answer {
+    color: #ddd;
+    em {
+      color: #ddd;
+    }
+    &:before {
+      content: "答案：";
+    }
   }
 }
