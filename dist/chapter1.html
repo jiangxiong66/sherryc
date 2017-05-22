@@ -25,22 +25,21 @@
     <div class="sidebar">
       <ul class="menu header-gap">
         <li>
-          <a class="sidebar-link catelog-active" href="#chapter0">第 0 章</a>
+          <a class="sidebar-link catelog-active">第 0 章</a>
           <ul class="sub-menu">
-            <li><a class="section-link catelog-active" href="#c0-preface">关于此系列文章</a></li>
-            <li><a class="section-link" href="#c0-computer-science">关于计算机科学</a></li>
-            <li><a class="section-link" href="#c0-computer-father">冯诺依曼体系</a></li>
-            <li><a class="section-link" href="#c0-algorithm">算法</a></li>
-            <li><a class="section-link" href="#c0-system-config">配置C语言开发运行环境</a></li>
-            <li><a class="section-link" href="#c0-hello-world">Hello world !</a></li>
-            <li><a class="section-link" href="#c0-c-structure">C程序的结构</a></li>
-            <li><a class="section-link" href="#c0-chapter0-exercise">习题</a></li>
+            <li><a class="section-link" href="#preface">关于此系列文章</a></li>
+            <li><a class="section-link" href="#computer-science">关于计算机科学</a></li>
+            <li><a class="section-link" href="#computer-father">冯诺依曼体系</a></li>
+            <li><a class="section-link" href="#system-config">配置C语言开发运行环境</a></li>
+            <li><a class="section-link" href="#hello-world">Hello world !</a></li>
+            <li><a class="section-link" href="#c-structure">C程序的结构</a></li>
+            <li><a class="section-link" href="#chapter0-exercise">习题</a></li>
           </ul>
         </li>
         <li>
           <a class="sidebar-link" href="">第 1 章</a>
           <ul>
-            <li><a href="#preface" class="section-link">变量</a></li>
+            <li><a href="#preface" class="section-link  catelog-active">变量</a></li>
             <li><a href="#preface" class="section-link">if else</a></li>
             <li><a href="#preface" class="section-link">while 循环</a></li>
             <li><a href="#preface" class="section-link">for 循环</a></li>
@@ -59,10 +58,10 @@
       </ul>
     </div>
     <div class="content with-sidebar header-gap">
-      <div class="article" id="chapter0">
+      <div class="article">
         <p class="pull-right">To dear Sherry</p>
-        <h1 id="">第 0 章</h1>
-        <div id="c0-preface" class="topic">
+        <h1 id="preface">第 0 章</h1>
+        <div id="preface" class="topic">
           <h2>序</h2>
           <p>关于此系列文章</p>
           <p>此系列文章主要面向没有编程经验的初学者，我们希望通过介绍如何使用C语言设计程序，使读者了解计算机的结构和运行原理，了解C语言的基本语法和一些程序设计的best practice，掌握使用分解和抽象解决问题的方法，为读者进一步学习计算机专业知识奠定基础。</p>
@@ -80,7 +79,7 @@
           </ul>
         </div>
 
-        <div id="c0-computer-science" data-title="计算机科学" class="topic">
+        <div id="computer-science" class="topic">
           <h2>计算机科学</h2>
           <p>Computer Science（计算机科学）的人总是被别的系的人挤兑，说你们为什么要叫计算机科学系呢，因为你们不科学，所以才要在名字上硬加上科学两个字，以显示你们是有逼格的，搞的是科学，是很高端的东西。</p>
           <p>计算机和科学两个词搭配在一起是感觉怪怪的，计算机是人发明出来的机器，怎么就科学了呢，人家汽车也是人发明出来的机器，就没有人说汽车科学是吧，只有车辆工程或汽修技术。</p>
@@ -89,7 +88,7 @@
           <p>计算机包含有形的硬件和无形的程序软件，程序是抽象的东西，它是一系列硬件能执行的操作指令，计算机科学便是关于怎样用这些抽象的东西，程序、软件描述问题解决问题的学科。</p>
         </div>
 
-        <div id="c0-computer-father" data-title="冯诺依曼体系" class="topic">
+        <div id="computer-father" class="topic">
           <h2>计算机他爹和冯诺依曼体系</h2>
           <p>冯诺依曼，计算机之父，他并没有发明电脑，也没有制造电脑。二战时期美军让宾夕法尼亚大学制造一台计算炮弹弹道的计算器，这台机器叫ENIAC，冯诺依曼当时在造原子弹，也需要算大量的数据，所以就去宾大把ENIAC找来用了一下，差不多在同一时期，美国还有另外一台电子计算器叫Mark I，冯诺依曼也去试用了一把。</p>
           <p>用完以后冯老作了一个总结，他说，计算机应该这样造，它应该采用二进制，它应该包含运算器、控制器、存储器和输入输出设备五个组成部分，最重要的一点，它应该储存程序</p>
@@ -112,7 +111,7 @@
           <p>I/O 设备</p>
           <p>Input/Output deices，输入输出设备，最常用的输入设备就是键盘鼠标喽，不用多解释了。输出设备，最常用的有显示器、投影仪、打印机等。</p>
         </div>
-        <div id="c0-algorithm" data-title="算法" class="topic">
+        <div id="algorithm" class="topic">
           <h2>算法</h2>
           <p>前面我们讨论了计算机的硬件和结构方面的知识，下面我们讲一讲计算机科学，如何用计算机解决问题。算法，我们可以简单理解为解决问题的方法，比如我们在上小学的时候都学过的列竖式算乘法，就是一个算法。为了更好的理解算法，我们来尝试一下给算法下个定义。算法要能解决问题，它应当要能够被准确的表达，没有歧义，让人们能够理解它的每一个步骤；其次，一个算法应当是有效的，里面每一个步骤都能被执行；最后，一个算法应当是有限的，在一定的步骤后它能停下来得到结果。</p>
           <p>总结一下，一个算法应当满足以下三个要求：</p>
@@ -122,7 +121,7 @@
             <li><em><strong>Finite</strong></em>, in the sense that it terminates after a bounded number of steps.</li>
           </ul>
         </div>
-        <div id="c0-programming-language" data-title="程序语言和编译" class="topic">
+        <div id="programming-language" class="topic">
           <h2>程序语言和编译</h2>
           <p>用计算机解决问题包含两个步骤，首先我们需要设计出解决这个问题的算法，这个过程我们称之为算法设计（algorithmic design）；然后我们还要把这个算法用计算机能够理解运行的程序语言写出来，这个过程称之为编码（coding）。</p>
           <p>程序语言有很多，列如C、Python、Javascript等等，在这个系列文章中我们主要讨论C程序语言。C语言是一种高级程序语言，为什么叫高级程序语言呢？因为它可以在各种计算机上运行，比如苹果Mac、IBM PC、iPad、安卓手机等等，其实这些不同的计算机用的CPU不同，各自有各自的机器语言，机器语言是低级语言，安卓手机的机器语言在ipad上是运行不了的。为什么C语言可以在各种机器上运行呢？因为C语言代码在变成最终的可执行代码的过程中经历了一个编译的过程。编译的过程很复杂，通俗的解释，我们用C语言写的代码通常放在一个.c的文件中，让后我们使用编译器把编写好的.c文件转化成.exe的文件，这个.exe的文件就是机器可执行的文件。</p>
@@ -133,7 +132,7 @@
             <figcaption>编译过程示意图</figcaption>
           </figure>
         </div>
-        <div id="c0-system-config" data-title="配置C语言开发运行环境" class="topic">
+        <div id="system-config" class="topic">
           <h2>配置C语言开发运行环境</h2>
           <p>市面上有众多支持C语言的编译器和集成开发软件（IDE），为方便初学者学习，我们选用轻量级的Dev C++</p>
           <p>首先，我们需要准备一台安装好windows操作系统的电脑。</p>
@@ -147,7 +146,7 @@
           </figure>
           <p><strong>Step 3</strong>. 启动Dev C++ 验证是否安装成功。</p>
         </div>
-        <div id="c0-hello-world" data-title="Hello World!" class="topic">
+        <div id="hello-world" class="topic">
           <h2>Hello World!</h2>
           <p>下面我们通过一个非常简单的hello world程序介绍Dev C++的使用。</p>
           <p>整个实验包含以下 5 个步骤：</p>
@@ -229,7 +228,7 @@ int main() {
             </li>
           </ul>
         </div>
-        <div id="c0-c-structure" data-title="C程序的结构"  class="topic">
+        <div id="c-structure" class="topic">
           <h2>C程序的结构</h2>
           <p>上面我们已经编写了我们的第一个C语言程序Hello World，并且在Dev C++中编译运行了该程序。这个程序的功能很简单，就是在屏幕上输出一行字“Hello world”。几乎每一本C语言的书都会以这个程序作为第一个示例程序，这是C语言界的一个传统，这个程序是C语言的发明者Brian Kernighan和Denis Ritchie在它们的著作《The C Programming Language》里展示的第一个示例程序，所以几乎所有后来编写的C语言的书籍都会使用这个示例程序向这两位发明者表示敬意。</p>
           <p>把Hello world这个程序做为第一个示例程序还有另外几个很实际的原因，这个程序很短小，但所谓麻雀虽小五脏俱全，通过这个程序，读者可以弄清楚程序编码、编译、运行整个流程，读者在这个过程可以熟悉自己的计算机软件环境。通过这个程序，读者可以了解一个C程序的大致组成部分和结构。</p>
@@ -246,7 +245,7 @@ int main() {
           <p>第三部分有4行代码，这段代码定义了一个名为<code>main</code>的函数，这个函数的返回值类型是<code>int</code>(integer 整数)，main后面有一对小括号<code>()</code>，括号里面表示的是这个函数接受的参数，这对括号里面没有东西，是空的，表示这个main函数不需要接受参数。</p>
           <p>小括号后面跟了一对花括号<code>{}</code>，花括号中间包含了两行代码，第一行代码<code>std::cout << "Hello world";</code>这句代码的作用就是把<code>Hello world</code>输出到电脑屏幕上</p>
           <p>后面一行代码<code>return 0;</code>表示函数执行到此处返回一个整数0，函数运行结束。</p>
-          <div class="exercise" data-title="习题" id="chapter0-exercise">
+          <div class="exercise" id="chapter0-exercise">
             <h3>实验题</h3>
             <ul>
               <li>
@@ -280,112 +279,6 @@ int main() {
           </div>
         </div>
       </div>
-      <!-- chapter 0 end -->
-      <div class="article" id="chapter1">
-        <p class="pull-right">To dear Sherry</p>
-        <h1 id="">第 1 章 Learning by Example</h1>
-        <div id="c1-preface" data-title="A + B" class="topic">
-          <h2>一个计算两个数相加之和的程序</h2>
-          <p>为了更进一步了解C语言，我们下面讨论一个比Hello world复杂一点点的程序，这个程序add2.cpp如下所示。这个程序要求使用者在键盘上输入两个数字，程序算出这个两个数字的和，然后输出到屏幕。把代码复制到Dev C++中编译运行一下吧！</p>
-          <pre><code>/*
-  File: add2.cpp
-  This program read two numbers, add them together,
-  and prints their sum.
-*/
-
-#include &lt;iostream&gt;
-
-int main() {
-  int n1, n2, total;
-  std::cout << "This program adds two numbers." << std::endl;
-  
-  std::cout << "1st number: ";
-  std::cin >> n1;
-  
-  std::cout << "2st number: ";
-  std::cin >> n2;
-  
-  total = n1 + n2;
-  std::cout << "The total is " << total << std::endl;
-  return 0;
-}
-</code></pre>
-          <p>首先我们仔细阅读以下代码，发现这个程序有很多元素与Hello World是相似的，比如程序最开始的部分，注释；头文件引入<code>#include &lt;iostream&gt;</code>;以及main函数。这些都是Hello world中也包含的。</p>
-          <p>我们看看main函数中的内容，main函数第二行<code>std::cout << "This program adds two numbers." << std::endl;</code> std::cout是我们再Hello World中已经接触过的，它后面跟了一个字符串常量，再后面的<code>std::endl</code>是新出现的元素，它表示换行。</p>
-          <p>相比Hello World，这个程序引进了一些新的概念。</p>
-          <p><code>main</code>函数的第1行<code>int n1, n2;</code>定义了两个<strong>变量</strong><code>n1</code>和<code>n2</code>，这两个变量的类型是<code>int</code><strong>整型 (integer)</strong>。</p>
-          <p><strong>变量</strong>可以理解为装数据的盒子，我们不知道用户要输入两个什么数字，所以我们在程序中准备两个装数据的盒子<code>n1 n2</code>，用户一输入，我们就把输入数据装进装数据的盒子--变量里。</p>
-          <p>在main函数的第5行，<code>std::cin >> n1;</code>, std::cin 表示标准输入，在正常情况下我们的电脑上标准输入是从键盘上输入，程序执行到这一行，它会等待用户从键盘上输入一些内容，用户按下回车键后输入结束。std::cin 后面更了一个双箭头号<code>>></code>,双箭头号后面是我们之前定义好的变量<code>n1</code>，它们表示把刚才键盘上输入的内容放进变量<code>n1</code>中（请把变量想象成一个盒子）。</p>
-          <p>在把用户第一个和第二个输入分别放进<code>n1 n2</code>里之后，main函数的第10行代码<code>total = n1 + n2</code>，它表示计算n1加n2的和，并把这个和放入total这个变量中（还是把它想象成一个装数据的盒子）。再往下面是一个输出语句<code>std::cout << "The total is " << total << std::endl;</code>输出结果。</p>
-
-          <div class="exercise" id="">
-            <h3>实验题</h3>
-            <ul>
-              <li><p class="question">运行程序尝试几组不同的输入，试试输入字母程序是什么反应，输入小数是什么反应，输入两个很大的整数看程序输出的结果是否正确？</p></li>
-              <li><p class="question">修改一下代码，让它变成一个求三个数相乘之积的程序，编译运行并测试几组数据，看程序是否正确运行？</p></li>
-            </ul>
-          </div>
-        </div>
-        <div id="c1-add2-structure" data-title="add2.cpp 结构分析" class="topic">
-          <h2>add2.cpp 结构分析</h2>
-          <p>上面一节我们分析了add2.cpp程序的各条语句，了解一门程序语言的语法细节是写出真确程序的必要条件，但是要成为一名优秀的程序员，还需要能够从语言的细节中跳出来，对程序有宏观的把握，这一节我们来分析一下这个程序的宏观结构。</p>
-          <p>add2可分为4个阶段：</p>
-          <ul>
-            <li>变量定义阶段</li>
-            <li>数据输入阶段</li>
-            <li>计算阶段</li>
-            <li>数据输出阶段</li>
-          </ul>
-          <p>程序add2的这种结构是非常有代表性的，往后我们接触到的很多程序都有与add2类似的结构。</p>
-          <figure>
-            <picture>
-              <img src="img/add2-analysis.png" alt="add2 structure analysis">
-            </picture>
-            <figcaption>Add程序结构分析</figcaption>
-          </figure>
-        </div>
-
-        <div id="c1-data-type" data-title="数据类型" class="topic">
-          <h2>数据类型</h2>
-          <p>在不同的应用中，程序会涉及到各种类型的数据，例如add2计算两个整数的和，就用到了整型数据（integer）。在一些其他的应用中，可能还会用到其他类型的数据，例如求给出半径求圆的面积，会用到圆周率，根据不同的精度要求，可能会取pi=3.14或pi=3.14159，这里的pi带有小数，它不是整数类型。又例如你用到的文档处理软件，里面最重要的数据是一个个的字符。当我们开始编写功能越来越复杂的程序，我们会需要把各种各样的信息组织在一起，形成复杂的数据。</p>
-          <p>当我们使用一个数据，不管是整数、小数或是字符，我们需要让C的编译器知道这个数据的类型。总的来说，一种数据类型可以通过以下两方面性质来定义：</p>
-          <ul>
-            <li>值域</li>
-            <li>支持的操作</li>
-          </ul>
-          <p>例如整型可以取(... -2, -1, 0, 1, 2 ...)这些值，可以支持加减乘除的操作（+ - * /）。以后面对一些复杂的应用我们会需要定义特有的数据类型，现在，我们先介绍一下C语言本身为我们提供的几个数据类型。</p>
-          <ul>
-            <li><code>int</code></li>
-            <li><code>double</code></li>
-            <li><code>string</code></li>
-          </ul>
-          <p><code>int</code>整型，在add2中我们已经有使用过整型了，在C语言中，整型的取值范围是与系统的环境相关的，在32位计算机上，int的范围为[-2147483648, 2147483647]，可以初略记忆下，在目前大多数计算机平台上C语言整型的取值范围<strong>约在正负二十亿之间。</strong></p>
-          <p><code>double</code>双精度浮点数，如果数据可能带有小数，则可选取double作为储存类型。</p>
-          <div class="exercise" id="">
-            <h3>实验题</h3>
-            <ul>
-              <li><p class="question">请升级add2程序，使它支持带小数的输入，编译运行并测试几组数据，看程序是否正确运行？</p></li>
-              <li><p class="question">一家金融公司有一款理财产品，一年期的利率是3.9925%，请你帮这家公司写一个计算收益的程序，这个程序可根据用户输入的购买金额计算并输出该理财产品一年的收益。</p></li>
-            </ul>
-          </div>
-        </div>
-
-        <div id="c1-string" data-title="字符串类型 string" class="topic">
-          <h2>字符串类型 string</h2>
-          <p>C 语言并没有内置的字符串类型，C 语言处理字符串非常复杂，对初学者非常不友好，能伺候好C语言字符串的基本都是老手了，然而字符串在应用程序中又非常重要，所以为了大家能够更轻松地接触编程，我们先借用C++的string，等以后我们对C有更深的理解以后，再来学习C风格的字符串。</p>
-          <p>为了使用C++的string类型，我们需要在程序中引入string的头文件<code>#include &lt;string&gt;</code></p>
-          <p>定义一个string变量：<code>std::string username;</code></p>
-          <p>给string变量赋一个值：<code>username = "Sherry";</code></p>
-          <p>用std::cin读入一个值：<code>std::cin >> username;</code></p>
-          <div class="exercise" id="">
-            <h3>实验题</h3>
-            <ul>
-              <li><p class="question">请升级Hello world程序，使它可以读入用户的名字，然后输出<code>Hello name</code>，例如用户输入的是<code>Sherry</code>，程序会在屏幕上打印出<code>Hello Sherry!</code>，编译运行并测试几组数据，看程序是否正确运行？</p></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <!-- chapter 1 end -->
     </div>
   </div>
 
