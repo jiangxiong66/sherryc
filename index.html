@@ -25,15 +25,16 @@
     <div class="sidebar">
       <ul class="menu header-gap">
         <li>
-          <a class="sidebar-link catelog-active">第 0 章</a>
+          <a class="sidebar-link catelog-active" href="#chapter0">第 0 章</a>
           <ul class="sub-menu">
-            <li><a class="section-link catelog-active" href="#preface">关于此系列文章</a></li>
-            <li><a class="section-link" href="#computer-science">关于计算机科学</a></li>
-            <li><a class="section-link" href="#computer-father">冯诺依曼体系</a></li>
-            <li><a class="section-link" href="#system-config">配置C语言开发运行环境</a></li>
-            <li><a class="section-link" href="#hello-world">Hello world !</a></li>
-            <li><a class="section-link" href="#c-structure">C程序的结构</a></li>
-            <li><a class="section-link" href="#chapter0-exercise">习题</a></li>
+            <li><a class="section-link catelog-active" href="#c0-preface">关于此系列文章</a></li>
+            <li><a class="section-link" href="#c0-computer-science">关于计算机科学</a></li>
+            <li><a class="section-link" href="#c0-computer-father">冯诺依曼体系</a></li>
+            <li><a class="section-link" href="#c0-algorithm">算法</a></li>
+            <li><a class="section-link" href="#c0-system-config">配置C语言开发运行环境</a></li>
+            <li><a class="section-link" href="#c0-hello-world">Hello world !</a></li>
+            <li><a class="section-link" href="#c0-c-structure">C程序的结构</a></li>
+            <li><a class="section-link" href="#c0-chapter0-exercise">习题</a></li>
           </ul>
         </li>
         <li>
@@ -58,10 +59,10 @@
       </ul>
     </div>
     <div class="content with-sidebar header-gap">
-      <div class="article">
+      <div class="article" id="chapter0">
         <p class="pull-right">To dear Sherry</p>
-        <h1 id="preface">第 0 章</h1>
-        <div id="preface" class="topic">
+        <h1 id="">第 0 章</h1>
+        <div id="c0-preface" class="topic">
           <h2>序</h2>
           <p>关于此系列文章</p>
           <p>此系列文章主要面向没有编程经验的初学者，我们希望通过介绍如何使用C语言设计程序，使读者了解计算机的结构和运行原理，了解C语言的基本语法和一些程序设计的best practice，掌握使用分解和抽象解决问题的方法，为读者进一步学习计算机专业知识奠定基础。</p>
@@ -79,16 +80,16 @@
           </ul>
         </div>
 
-        <div id="computer-science" class="topic">
+        <div id="c0-computer-science" data-title="计算机科学" class="topic">
           <h2>计算机科学</h2>
           <p>Computer Science（计算机科学）的人总是被别的系的人挤兑，说你们为什么要叫计算机科学系呢，因为你们不科学，所以才要在名字上硬加上科学两个字，以显示你们是有逼格的，搞的是科学，是很高端的东西。</p>
           <p>计算机和科学两个词搭配在一起是感觉怪怪的，计算机是人发明出来的机器，怎么就科学了呢，人家汽车也是人发明出来的机器，就没有人说汽车科学是吧，只有车辆工程或汽修技术。</p>
-          <p>人们用科学这个词，往往是关于研究自然界的现象，这些现象是及时没有人类也是客观存在的，比如生物、物理、天文，这些东西我们感觉很科学，计算机怎么就科学了呢？</p>
+          <p>人们用科学这个词，往往是关于研究自然界的现象，这些现象是即使没有人类也是客观存在的，比如生物、物理、天文，这些东西我们感觉很科学，计算机怎么就科学了呢？</p>
           <p>让我们回顾一下历史，三千年前的埃及，尼罗河周期性的洪水带来的泥土在河谷形成肥沃的农田，他们根据土地的面积大小来决定交给法老多少税收，那时的埃及人掌握了丈量土地计算面积的方法，他们发明了几何。从三千年后的今天来看，他们发明几何最大的意义并不是掌握了测量土地面积的工具，而是找到了描述点、线、面关系的方法，从此开始人类便能够系统探索关于空间的知识。</p>
           <p>计算机包含有形的硬件和无形的程序软件，程序是抽象的东西，它是一系列硬件能执行的操作指令，计算机科学便是关于怎样用这些抽象的东西，程序、软件描述问题解决问题的学科。</p>
         </div>
 
-        <div id="computer-father" class="topic">
+        <div id="c0-computer-father" data-title="冯诺依曼体系" class="topic">
           <h2>计算机他爹和冯诺依曼体系</h2>
           <p>冯诺依曼，计算机之父，他并没有发明电脑，也没有制造电脑。二战时期美军让宾夕法尼亚大学制造一台计算炮弹弹道的计算器，这台机器叫ENIAC，冯诺依曼当时在造原子弹，也需要算大量的数据，所以就去宾大把ENIAC找来用了一下，差不多在同一时期，美国还有另外一台电子计算器叫Mark I，冯诺依曼也去试用了一把。</p>
           <p>用完以后冯老作了一个总结，他说，计算机应该这样造，它应该采用二进制，它应该包含运算器、控制器、存储器和输入输出设备五个组成部分，最重要的一点，它应该储存程序</p>
@@ -111,7 +112,7 @@
           <p>I/O 设备</p>
           <p>Input/Output deices，输入输出设备，最常用的输入设备就是键盘鼠标喽，不用多解释了。输出设备，最常用的有显示器、投影仪、打印机等。</p>
         </div>
-        <div id="algorithm" class="topic">
+        <div id="c0-algorithm" data-title="算法" class="topic">
           <h2>算法</h2>
           <p>前面我们讨论了计算机的硬件和结构方面的知识，下面我们讲一讲计算机科学，如何用计算机解决问题。算法，我们可以简单理解为解决问题的方法，比如我们在上小学的时候都学过的列竖式算乘法，就是一个算法。为了更好的理解算法，我们来尝试一下给算法下个定义。算法要能解决问题，它应当要能够被准确的表达，没有歧义，让人们能够理解它的每一个步骤；其次，一个算法应当是有效的，里面每一个步骤都能被执行；最后，一个算法应当是有限的，在一定的步骤后它能停下来得到结果。</p>
           <p>总结一下，一个算法应当满足以下三个要求：</p>
@@ -121,7 +122,7 @@
             <li><em><strong>Finite</strong></em>, in the sense that it terminates after a bounded number of steps.</li>
           </ul>
         </div>
-        <div id="programming-language" class="topic">
+        <div id="c0-programming-language" data-title="程序语言和编译" class="topic">
           <h2>程序语言和编译</h2>
           <p>用计算机解决问题包含两个步骤，首先我们需要设计出解决这个问题的算法，这个过程我们称之为算法设计（algorithmic design）；然后我们还要把这个算法用计算机能够理解运行的程序语言写出来，这个过程称之为编码（coding）。</p>
           <p>程序语言有很多，列如C、Python、Javascript等等，在这个系列文章中我们主要讨论C程序语言。C语言是一种高级程序语言，为什么叫高级程序语言呢？因为它可以在各种计算机上运行，比如苹果Mac、IBM PC、iPad、安卓手机等等，其实这些不同的计算机用的CPU不同，各自有各自的机器语言，机器语言是低级语言，安卓手机的机器语言在ipad上是运行不了的。为什么C语言可以在各种机器上运行呢？因为C语言代码在变成最终的可执行代码的过程中经历了一个编译的过程。编译的过程很复杂，通俗的解释，我们用C语言写的代码通常放在一个.c的文件中，让后我们使用编译器把编写好的.c文件转化成.exe的文件，这个.exe的文件就是机器可执行的文件。</p>
@@ -132,7 +133,7 @@
             <figcaption>编译过程示意图</figcaption>
           </figure>
         </div>
-        <div id="system-config" class="topic">
+        <div id="c0-system-config" data-title="配置C语言开发运行环境" class="topic">
           <h2>配置C语言开发运行环境</h2>
           <p>市面上有众多支持C语言的编译器和集成开发软件（IDE），为方便初学者学习，我们选用轻量级的Dev C++</p>
           <p>首先，我们需要准备一台安装好windows操作系统的电脑。</p>
@@ -146,7 +147,7 @@
           </figure>
           <p><strong>Step 3</strong>. 启动Dev C++ 验证是否安装成功。</p>
         </div>
-        <div id="hello-world" class="topic">
+        <div id="c0-hello-world" data-title="Hello World!" class="topic">
           <h2>Hello World!</h2>
           <p>下面我们通过一个非常简单的hello world程序介绍Dev C++的使用。</p>
           <p>整个实验包含以下 5 个步骤：</p>
@@ -228,7 +229,7 @@ int main() {
             </li>
           </ul>
         </div>
-        <div id="c-structure" class="topic">
+        <div id="c0-c-structure" data-title="C程序的结构"  class="topic">
           <h2>C程序的结构</h2>
           <p>上面我们已经编写了我们的第一个C语言程序Hello World，并且在Dev C++中编译运行了该程序。这个程序的功能很简单，就是在屏幕上输出一行字“Hello world”。几乎每一本C语言的书都会以这个程序作为第一个示例程序，这是C语言界的一个传统，这个程序是C语言的发明者Brian Kernighan和Denis Ritchie在它们的著作《The C Programming Language》里展示的第一个示例程序，所以几乎所有后来编写的C语言的书籍都会使用这个示例程序向这两位发明者表示敬意。</p>
           <p>把Hello world这个程序做为第一个示例程序还有另外几个很实际的原因，这个程序很短小，但所谓麻雀虽小五脏俱全，通过这个程序，读者可以弄清楚程序编码、编译、运行整个流程，读者在这个过程可以熟悉自己的计算机软件环境。通过这个程序，读者可以了解一个C程序的大致组成部分和结构。</p>
@@ -245,7 +246,7 @@ int main() {
           <p>第三部分有4行代码，这段代码定义了一个名为<code>main</code>的函数，这个函数的返回值类型是<code>int</code>(integer 整数)，main后面有一对小括号<code>()</code>，括号里面表示的是这个函数接受的参数，这对括号里面没有东西，是空的，表示这个main函数不需要接受参数。</p>
           <p>小括号后面跟了一对花括号<code>{}</code>，花括号中间包含了两行代码，第一行代码<code>std::cout << "Hello world";</code>这句代码的作用就是把<code>Hello world</code>输出到电脑屏幕上</p>
           <p>后面一行代码<code>return 0;</code>表示函数执行到此处返回一个整数0，函数运行结束。</p>
-          <div class="exercise" id="chapter0-exercise">
+          <div class="c0-exercise" data-title="习题" id="chapter0-exercise">
             <h3>实验题</h3>
             <ul>
               <li>
@@ -279,6 +280,7 @@ int main() {
           </div>
         </div>
       </div>
+      <!-- chapter 0 end -->
     </div>
   </div>
 
