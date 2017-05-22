@@ -27,7 +27,7 @@
         <li>
           <a class="sidebar-link catelog-active" href="#chapter0">第 0 章</a>
           <ul class="sub-menu">
-            <li><a class="section-link catelog-active" href="#c0-preface">关于此系列文章</a></li>
+            <li><a class="section-link" href="#c0-preface">关于此系列文章</a></li>
             <li><a class="section-link" href="#c0-computer-science">关于计算机科学</a></li>
             <li><a class="section-link" href="#c0-computer-father">冯诺依曼体系</a></li>
             <li><a class="section-link" href="#c0-algorithm">算法</a></li>
@@ -38,9 +38,12 @@
           </ul>
         </li>
         <li>
-          <a class="sidebar-link" href="">第 1 章</a>
+          <a class="sidebar-link" href="#chapter1">第 1 章</a>
           <ul>
-            <li><a href="#preface" class="section-link">变量</a></li>
+            <li><a href="#c1-add2" class="section-link">A + B 实例</a></li>
+            <li><a href="#c1-add2-structure" class="section-link">A + B 结构分析</a></li>
+            <li><a href="#c1-data-type" class="section-link">数据类型</a></li>
+            <li><a href="#c1-string" class="section-link">字符串类型 string</a></li>
             <li><a href="#preface" class="section-link">if else</a></li>
             <li><a href="#preface" class="section-link">while 循环</a></li>
             <li><a href="#preface" class="section-link">for 循环</a></li>
@@ -284,7 +287,7 @@ int main() {
       <div class="article" id="chapter1">
         <p class="pull-right">To dear Sherry</p>
         <h1 id="">第 1 章 Learning by Example</h1>
-        <div id="c1-preface" data-title="A + B" class="topic">
+        <div id="c1-add2" data-title="A + B" class="topic">
           <h2>一个计算两个数相加之和的程序</h2>
           <p>为了更进一步了解C语言，我们下面讨论一个比Hello world复杂一点点的程序，这个程序add2.cpp如下所示。这个程序要求使用者在键盘上输入两个数字，程序算出这个两个数字的和，然后输出到屏幕。把代码复制到Dev C++中编译运行一下吧！</p>
           <pre><code>/*
