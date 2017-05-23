@@ -318,7 +318,7 @@ int main() {
           <p>相比Hello World，这个程序引进了一些新的概念。</p>
           <p><code>main</code>函数的第1行<code>int n1, n2;</code>定义了两个<strong>变量</strong><code>n1</code>和<code>n2</code>，这两个变量的类型是<code>int</code><strong>整型 (integer)</strong>。</p>
           <p><strong>变量</strong>可以理解为装数据的盒子，我们不知道用户要输入两个什么数字，所以我们在程序中准备两个装数据的盒子<code>n1 n2</code>，用户一输入，我们就把输入数据装进装数据的盒子--变量里。</p>
-          <p>在main函数的第5行，<code>std::cin >> n1;</code>, std::cin 表示标准输入，在正常情况下我们的电脑上标准输入是从键盘上输入，程序执行到这一行，它会等待用户从键盘上输入一些内容，用户按下回车键后输入结束。std::cin 后面更了一个双箭头号<code>>></code>,双箭头号后面是我们之前定义好的变量<code>n1</code>，它们表示把刚才键盘上输入的内容放进变量<code>n1</code>中（请把变量想象成一个盒子）。</p>
+          <p>在main函数的第5行，<code>std::cin >> n1;</code>, std::cin 表示标准输入，在正常情况下我们的电脑上标准输入是从键盘上输入，程序执行到这一行，它会等待用户从键盘上输入一些内容，用户按下回车键后输入结束。std::cin 后面更了一个双箭头号<code>&gt;&gt;</code>,双箭头号后面是我们之前定义好的变量<code>n1</code>，它们表示把刚才键盘上输入的内容放进变量<code>n1</code>中（请把变量想象成一个盒子）。</p>
           <p>在把用户第一个和第二个输入分别放进<code>n1 n2</code>里之后，main函数的第10行代码<code>total = n1 + n2</code>，它表示计算n1加n2的和，并把这个和放入total这个变量中（还是把它想象成一个装数据的盒子）。再往下面是一个输出语句<code>std::cout << "The total is " << total << std::endl;</code>输出结果。</p>
 
           <div class="exercise" id="">
@@ -456,6 +456,81 @@ int main() {
             </ul>
           </div>
         </div>
+        <div id="c1-operator-priority" data-title="运算和运算优先级" class="topic">
+          <h2>运算和运算优先级</h2>
+          <h3>整型的运算</h3>
+          <p>在C语言中，整型支持加、减、乘、除、取余这些基本运算。</p>
+          <ul>
+            <li><code>+</code>：加法运算</li>
+            <li><code>-</code>：减法运算</li>
+            <li><code>*</code>：乘法运算</li>
+            <li><code>/</code>：除法运算。在C语言中，两个整型相除，其结果仍为整型，例如9/4，其结果为2，余数部分会被扔弃掉。</li>
+            <li><code>%</code>：取余（取模）运算。C语言中整型还支持取模运算。整型A模整型B<code>A%B</code>，其结果仍为整型，例如9%4，其结果为1。浮点类型例如<code>double</code>没有取模运算。</li>
+          </ul>
+          <h3>浮点型的运算</h3>
+          <p>在C语言中，浮点型（例如double）支持加、减、乘、除四则运算。其规则与数学上的四则运算相似。</p>
+          <h3>运算的优先级</h3>
+          <p>C语言中整型、浮点型的四则运算与数学上的四则运算有相同的优先级规则，有括号先计算括号里面的运算，先乘除，后加减，优先级相同则从左往右依次计算。（整型的取模运算优先级与乘除相同）</p>
+          <div class="tip">以后我们还会学习C语言中更多的运算，例如逻辑运算、位移运算，C语言运算的优先级层级非常复杂，如果需要编写复杂的表达式，最稳妥的做法是<strong>适当运用括号</strong>，确保表达式的运算顺序与预期相同。</div>
+          <div class="exercise" id="">
+            <h3>实验题</h3>
+            <ul>
+              <li>
+                <p class="question">请先在纸上计算表达式：<code>8 * (7 - 6 + 5) % (4 + 3 / 2) - 1</code>的结果，然后用程序计算该表达式，对比一下结果，验证你的计算是否正确。</p>
+              </li>
+              <li>
+                <p>Zeo最近去美国旅游，美国的天气预报用的都是华氏温度，Zeo感到非常不习惯，已知华氏度(Fahrenheit)转摄氏度(Celsius)的公式为：<p>
+                <figure style="border:none;">
+                  <picture>
+                    <img src="http://chart.googleapis.com/chart?cht=tx&chl=C%3D%5Cfrac%7B5%7D%7B9%7D%5Ctimes%20(F-32)" style="border:none;" />
+                  </picture>
+                </figure>
+                <p>请你为Zeo写一个将华氏度转换为摄氏度的程序，该程序读入一个华氏度数据，输出其对应的摄氏温度。（参考资料1：<a href="https://zh.wikipedia.org/wiki/%E5%8D%8E%E6%B0%8F%E6%B8%A9%E6%A0%87">华氏温标</a>）</p>
+              </li>
+              <li>Zeo感觉这个程序输出的摄氏度小数点后面的数字太多了，可不可只保留小数点后1位输出。（参考资料1：<a href="https://stackoverflow.com/questions/13728425/print-double-with-precision-4-using-cout">print double with precision 4 using cout</a> 参考资料2：<a href="http://www.cplusplus.com/reference/iomanip/setprecision/">setprecision</a>）</li>
+            </ul>
+            <h3>知识回顾</h3>
+            <ul>
+              <li>
+                <p class="question">程序中注释的作用是什么？为什么要好注释？</p>
+                <p class="answer"></p>
+              </li>
+              <li>
+                <p class="question">使用<code>std::cin</code><code>std::cout</code><code>std::endl</code>分别要引入哪些头文件？</p>
+                <p class="answer"></p>
+              </li>
+              <li>
+                <p class="question">一个数据类型包含哪些要素？</p>
+                <p class="answer">值域和其所支持的操作</p>
+              </li>
+              <li>
+                <p class="question">C语言中整型<code>int</code>包含哪些操作（运算）？</p>
+                <p class="answer">加、减、乘、除、取模</p>
+              </li>
+              <li>
+                <p class="question">C语言中浮点型<code>double</code>包含哪些操作（运算）？</p>
+                <p class="answer">加、减、乘、除</p>
+              </li>
+              <li>
+                <p class="question">C语言有内置的字符串类型吗？</p>
+                <p class="answer">没有，string是C++库提供的字符串类型</p>
+              </li>
+              <li>
+                <p class="question">一个变量包含哪几个重要属性？</p>
+                <p class="answer">三个，变量的名字、变量的类型、变量的值。</p>
+              </li>
+              <li>
+                <p class="question">请简述小驼峰命名规范。</p>
+                <p class="answer"></p>
+              </li>
+              <li>
+                <p class="question">如果要写一个非常复杂的表达式，有很多运算的优先级你都不太确定，请问你该怎样确保编写的表达式运算顺序的正确性？</p>
+                <p class="answer"></p>
+              </li>
+            </ul>
+          </div>
+        </div>
+
       </div>
       <!-- chapter 1 end -->
     </div>
