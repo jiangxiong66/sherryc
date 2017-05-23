@@ -62,10 +62,10 @@
       </ul>
     </div>
     <div class="content with-sidebar header-gap">
-      <div class="article" id="chapter0">
+      <div class="article" id="chapter0" data-title="第 0 章">
         <p class="pull-right">To dear Sherry</p>
         <h1 id="">第 0 章</h1>
-        <div id="c0-preface" class="topic">
+        <div id="c0-preface" class="topic section">
           <h2>序</h2>
           <p>关于此系列文章</p>
           <p>此系列文章主要面向没有编程经验的初学者，我们希望通过介绍如何使用C语言设计程序，使读者了解计算机的结构和运行原理，了解C语言的基本语法和一些程序设计的best practice，掌握使用分解和抽象解决问题的方法，为读者进一步学习计算机专业知识奠定基础。</p>
@@ -83,7 +83,7 @@
           </ul>
         </div>
 
-        <div id="c0-computer-science" data-title="计算机科学" class="topic">
+        <div id="c0-computer-science" data-title="计算机科学" class="topic section">
           <h2>计算机科学</h2>
           <p>Computer Science（计算机科学）的人总是被别的系的人挤兑，说你们为什么要叫计算机科学系呢，因为你们不科学，所以才要在名字上硬加上科学两个字，以显示你们是有逼格的，搞的是科学，是很高端的东西。</p>
           <p>计算机和科学两个词搭配在一起是感觉怪怪的，计算机是人发明出来的机器，怎么就科学了呢，人家汽车也是人发明出来的机器，就没有人说汽车科学是吧，只有车辆工程或汽修技术。</p>
@@ -92,7 +92,7 @@
           <p>计算机包含有形的硬件和无形的程序软件，程序是抽象的东西，它是一系列硬件能执行的操作指令，计算机科学便是关于怎样用这些抽象的东西，程序、软件描述问题解决问题的学科。</p>
         </div>
 
-        <div id="c0-computer-father" data-title="冯诺依曼体系" class="topic">
+        <div id="c0-computer-father" data-title="冯诺依曼体系" class="topic section">
           <h2>计算机他爹和冯诺依曼体系</h2>
           <p>冯诺依曼，计算机之父，他并没有发明电脑，也没有制造电脑。二战时期美军让宾夕法尼亚大学制造一台计算炮弹弹道的计算器，这台机器叫ENIAC，冯诺依曼当时在造原子弹，也需要算大量的数据，所以就去宾大把ENIAC找来用了一下，差不多在同一时期，美国还有另外一台电子计算器叫Mark I，冯诺依曼也去试用了一把。</p>
           <p>用完以后冯老作了一个总结，他说，计算机应该这样造，它应该采用二进制，它应该包含运算器、控制器、存储器和输入输出设备五个组成部分，最重要的一点，它应该储存程序</p>
@@ -115,7 +115,7 @@
           <p>I/O 设备</p>
           <p>Input/Output deices，输入输出设备，最常用的输入设备就是键盘鼠标喽，不用多解释了。输出设备，最常用的有显示器、投影仪、打印机等。</p>
         </div>
-        <div id="c0-algorithm" data-title="算法" class="topic">
+        <div id="c0-algorithm" data-title="算法" class="topic section">
           <h2>算法</h2>
           <p>前面我们讨论了计算机的硬件和结构方面的知识，下面我们讲一讲计算机科学，如何用计算机解决问题。算法，我们可以简单理解为解决问题的方法，比如我们在上小学的时候都学过的列竖式算乘法，就是一个算法。为了更好的理解算法，我们来尝试一下给算法下个定义。算法要能解决问题，它应当要能够被准确的表达，没有歧义，让人们能够理解它的每一个步骤；其次，一个算法应当是有效的，里面每一个步骤都能被执行；最后，一个算法应当是有限的，在一定的步骤后它能停下来得到结果。</p>
           <p>总结一下，一个算法应当满足以下三个要求：</p>
@@ -125,7 +125,7 @@
             <li><em><strong>Finite</strong></em>, in the sense that it terminates after a bounded number of steps.</li>
           </ul>
         </div>
-        <div id="c0-programming-language" data-title="程序语言和编译" class="topic">
+        <div id="c0-programming-language" data-title="程序语言和编译" class="topic section">
           <h2>程序语言和编译</h2>
           <p>用计算机解决问题包含两个步骤，首先我们需要设计出解决这个问题的算法，这个过程我们称之为算法设计（algorithmic design）；然后我们还要把这个算法用计算机能够理解运行的程序语言写出来，这个过程称之为编码（coding）。</p>
           <p>程序语言有很多，列如C、Python、Javascript等等，在这个系列文章中我们主要讨论C程序语言。C语言是一种高级程序语言，为什么叫高级程序语言呢？因为它可以在各种计算机上运行，比如苹果Mac、IBM PC、iPad、安卓手机等等，其实这些不同的计算机用的CPU不同，各自有各自的机器语言，机器语言是低级语言，安卓手机的机器语言在ipad上是运行不了的。为什么C语言可以在各种机器上运行呢？因为C语言代码在变成最终的可执行代码的过程中经历了一个编译的过程。编译的过程很复杂，通俗的解释，我们用C语言写的代码通常放在一个.c的文件中，让后我们使用编译器把编写好的.c文件转化成.exe的文件，这个.exe的文件就是机器可执行的文件。</p>
@@ -136,7 +136,7 @@
             <figcaption>编译过程示意图</figcaption>
           </figure>
         </div>
-        <div id="c0-system-config" data-title="配置C语言开发运行环境" class="topic">
+        <div id="c0-system-config" data-title="配置C语言开发运行环境" class="topic section">
           <h2>配置C语言开发运行环境</h2>
           <p>市面上有众多支持C语言的编译器和集成开发软件（IDE），为方便初学者学习，我们选用轻量级的Dev C++</p>
           <p>首先，我们需要准备一台安装好windows操作系统的电脑。</p>
@@ -150,7 +150,7 @@
           </figure>
           <p><strong>Step 3</strong>. 启动Dev C++ 验证是否安装成功。</p>
         </div>
-        <div id="c0-hello-world" data-title="Hello World!" class="topic">
+        <div id="c0-hello-world" data-title="Hello World!" class="topic section">
           <h2>Hello World!</h2>
           <p>下面我们通过一个非常简单的hello world程序介绍Dev C++的使用。</p>
           <p>整个实验包含以下 5 个步骤：</p>
@@ -232,7 +232,7 @@ int main() {
             </li>
           </ul>
         </div>
-        <div id="c0-c-structure" data-title="C程序的结构"  class="topic">
+        <div id="c0-c-structure" data-title="C程序的结构"  class="topic section">
           <h2>C程序的结构</h2>
           <p>上面我们已经编写了我们的第一个C语言程序Hello World，并且在Dev C++中编译运行了该程序。这个程序的功能很简单，就是在屏幕上输出一行字“Hello world”。几乎每一本C语言的书都会以这个程序作为第一个示例程序，这是C语言界的一个传统，这个程序是C语言的发明者Brian Kernighan和Denis Ritchie在它们的著作《The C Programming Language》里展示的第一个示例程序，所以几乎所有后来编写的C语言的书籍都会使用这个示例程序向这两位发明者表示敬意。</p>
           <p>把Hello world这个程序做为第一个示例程序还有另外几个很实际的原因，这个程序很短小，但所谓麻雀虽小五脏俱全，通过这个程序，读者可以弄清楚程序编码、编译、运行整个流程，读者在这个过程可以熟悉自己的计算机软件环境。通过这个程序，读者可以了解一个C程序的大致组成部分和结构。</p>
@@ -249,7 +249,7 @@ int main() {
           <p>第三部分有4行代码，这段代码定义了一个名为<code>main</code>的函数，这个函数的返回值类型是<code>int</code>(integer 整数)，main后面有一对小括号<code>()</code>，括号里面表示的是这个函数接受的参数，这对括号里面没有东西，是空的，表示这个main函数不需要接受参数。</p>
           <p>小括号后面跟了一对花括号<code>{}</code>，花括号中间包含了两行代码，第一行代码<code>std::cout << "Hello world";</code>这句代码的作用就是把<code>Hello world</code>输出到电脑屏幕上</p>
           <p>后面一行代码<code>return 0;</code>表示函数执行到此处返回一个整数0，函数运行结束。</p>
-          <div class="exercise" data-title="习题" id="chapter0-exercise">
+          <div class="exercise section" data-title="习题" id="chapter0-exercise">
             <h3>实验题</h3>
             <ul>
               <li>
@@ -284,10 +284,10 @@ int main() {
         </div>
       </div>
       <!-- chapter 0 end -->
-      <div class="article" id="chapter1">
+      <div class="article" id="chapter1" data-title="第 1 章 Learning by Example">
         <p class="pull-right">To dear Sherry</p>
         <h1 id="">第 1 章 Learning by Example</h1>
-        <div id="c1-add2" data-title="A + B" class="topic">
+        <div id="c1-add2" data-title="A + B" class="topic section">
           <h2>一个计算两个数相加之和的程序</h2>
           <p>为了更进一步了解C语言，我们下面讨论一个比Hello world复杂一点点的程序，这个程序add2.cpp如下所示。这个程序要求使用者在键盘上输入两个数字，程序算出这个两个数字的和，然后输出到屏幕。把代码复制到Dev C++中编译运行一下吧！</p>
           <pre><code>/*
@@ -329,7 +329,7 @@ int main() {
             </ul>
           </div>
         </div>
-        <div id="c1-add2-structure" data-title="add2.cpp 结构分析" class="topic">
+        <div id="c1-add2-structure" data-title="add2.cpp 结构分析" class="topic section">
           <h2>add2.cpp 结构分析</h2>
           <p>上面一节我们分析了add2.cpp程序的各条语句，了解一门程序语言的语法细节是写出正确程序的必要条件，但是要成为一名优秀的程序员，还需要能够从语言的细节中跳出来，对程序有宏观的把握，这一节我们来分析一下这个程序的宏观结构。</p>
           <p>add2可分为4个阶段：</p>
@@ -348,7 +348,7 @@ int main() {
           </figure>
         </div>
 
-        <div id="c1-data-type" data-title="数据类型" class="topic">
+        <div id="c1-data-type" data-title="数据类型" class="topic section">
           <h2>数据类型</h2>
           <p>在不同的应用中，程序会涉及到各种类型的数据，例如add2计算两个整数的和，就用到了整型数据（integer）。在一些其他的应用中，可能还会用到其他类型的数据，例如求给出半径求圆的面积，会用到圆周率，根据不同的精度要求，可能会取pi=3.14或pi=3.14159，这里的pi带有小数，它不是整数类型。又例如你用到的文档处理软件，里面最重要的数据是一个个的字符。当我们开始编写功能越来越复杂的程序，我们会需要把各种各样的信息组织在一起，形成复杂的数据。</p>
           <p>当我们使用一个数据，不管是整数、小数或是字符，我们需要让C的编译器知道这个数据的类型。总的来说，一种数据类型可以通过以下两方面性质来定义：</p>
@@ -373,7 +373,7 @@ int main() {
           </div>
         </div>
 
-        <div id="c1-string" data-title="字符串类型 string" class="topic">
+        <div id="c1-string" data-title="字符串类型 string" class="topic section">
           <h2>字符串类型 string</h2>
           <p>C 语言并没有内置的字符串类型，C 语言处理字符串非常复杂，对初学者非常不友好，能伺候好C语言字符串的基本都是老手了，然而字符串在应用程序中又非常重要，所以为了大家能够更轻松地接触编程，我们先借用C++的string，等以后我们对C有更深的理解以后，再来学习C风格的字符串。</p>
           <p>为了使用C++的string类型，我们需要在程序中引入string的头文件<code>#include &lt;string&gt;</code></p>
@@ -389,7 +389,7 @@ int main() {
           </div>
         </div>
 
-        <div id="c1-var-const-exp" data-title="变量、常量和表达式" class="topic">
+        <div id="c1-var-const-exp" data-title="变量、常量和表达式" class="topic section">
           <h2>变量、常量和表达式</h2>
           <p>当我们写一个需要执行一些运算的程序的时候，我们就需要用到表达式，C语言的表达式与数学上的表达式是类似的。例如之前的add2程序，我们用到的<code>n1 + n2</code>就是一个表达式。在C语言中，表达式是由terms和operators（运算符）组成的。operator，例如加号<code>+</code>、乘号<code>*</code>，表示一种运算的符号。在表达式中，一个term可以是：</p>
           <ul>
@@ -412,7 +412,7 @@ int main() {
           </ul>
         </div>
 
-        <div id="c1-assignment" data-title="赋值语句" class="topic">
+        <div id="c1-assignment" data-title="赋值语句" class="topic section">
           <h2>赋值语句</h2>
           <p>在程序add2中，我们已经用到了赋值语句。在C语言中赋值语句满足以下所示的形式：</p>
           <p><code>varialbe = expression;</code></p>
@@ -456,7 +456,7 @@ int main() {
             </ul>
           </div>
         </div>
-        <div id="c1-operator-priority" data-title="运算和运算优先级" class="topic">
+        <div id="c1-operator-priority" data-title="运算和运算优先级" class="topic section">
           <h2>运算和运算优先级</h2>
           <h3>整型的运算</h3>
           <p>在C语言中，整型支持加、减、乘、除、取余这些基本运算。</p>
@@ -472,7 +472,7 @@ int main() {
           <h3>运算的优先级</h3>
           <p>C语言中整型、浮点型的四则运算与数学上的四则运算有相同的优先级规则，有括号先计算括号里面的运算，先乘除，后加减，优先级相同则从左往右依次计算。（整型的取模运算优先级与乘除相同）</p>
           <div class="tip">以后我们还会学习C语言中更多的运算，例如逻辑运算、位移运算，C语言运算的优先级层级非常复杂，如果需要编写复杂的表达式，最稳妥的做法是<strong>适当运用括号</strong>，确保表达式的运算顺序与预期相同。</div>
-          <div class="exercise" id="c1-chapter1-exercise">
+          <div class="exercise section" id="c1-chapter1-exercise">
             <h3>实验题</h3>
             <ul>
               <li>
