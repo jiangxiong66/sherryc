@@ -39,20 +39,20 @@
         </li>
         <li>
           <a class="sidebar-link" href="#chapter1">第 1 章</a>
-          <ul>
-            <li><a href="#c1-add2" class="section-link">A + B 实例</a></li>
-            <li><a href="#c1-add2-structure" class="section-link">A + B 结构分析</a></li>
-            <li><a href="#c1-data-type" class="section-link">数据类型</a></li>
-            <li><a href="#c1-string" class="section-link">字符串类型 string</a></li>
-            <li><a href="#preface" class="section-link">if else</a></li>
-            <li><a href="#preface" class="section-link">while 循环</a></li>
-            <li><a href="#preface" class="section-link">for 循环</a></li>
-            <li><a href="#preface" class="section-link">函数</a></li>
+          <ul class="sub-menu">
+            <li><a class="section-link" href="#c1-add2">A + B 实例</a></li>
+            <li><a class="section-link href="#c1-add2-structure"">A + B 结构分析</a></li>
+            <li><a class="section-link" href="#c1-data-type">数据类型</a></li>
+            <li><a class="section-link" href="#c1-string">字符串类型 string</a></li>
+            <li><a class="section-link" href="#c1-var-const-exp">变量、常量和表达式</a></li>
+            <li><a class="section-link" href="#c1-assignment">赋值语句</a></li>
+            <li><a class="section-link" href="#c1-operator-priority">运算和运算优先级</a></li>
+            <li><a class="section-link" href="#c1-chapter1-exercise">习题</a></li>
           </ul>
         </li>
         <li>
           <a class="sidebar-link" href="">第 2 章</a>
-          <ul>
+          <ul class="sub-menu">
             <li><a href="#preface" class="section-link">数组</a></li>
             <li><a href="#preface" class="section-link">内存模型</a></li>
             <li><a href="#preface" class="section-link">算法</a></li>
@@ -472,7 +472,7 @@ int main() {
           <h3>运算的优先级</h3>
           <p>C语言中整型、浮点型的四则运算与数学上的四则运算有相同的优先级规则，有括号先计算括号里面的运算，先乘除，后加减，优先级相同则从左往右依次计算。（整型的取模运算优先级与乘除相同）</p>
           <div class="tip">以后我们还会学习C语言中更多的运算，例如逻辑运算、位移运算，C语言运算的优先级层级非常复杂，如果需要编写复杂的表达式，最稳妥的做法是<strong>适当运用括号</strong>，确保表达式的运算顺序与预期相同。</div>
-          <div class="exercise" id="">
+          <div class="exercise" id="c1-chapter1-exercise">
             <h3>实验题</h3>
             <ul>
               <li>
