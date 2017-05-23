@@ -23,8 +23,8 @@
   </header>
   <div class="main full-width">
     <div class="sidebar">
-      <ul class="menu header-gap">
-        <li>
+      <ul class="menu header-gap" id="catelog">
+        <!-- <li>
           <a class="sidebar-link catelog-active" href="#chapter0">第 0 章</a>
           <ul class="sub-menu">
             <li><a class="section-link" href="#c0-preface">关于此系列文章</a></li>
@@ -58,14 +58,14 @@
             <li><a href="#preface" class="section-link">算法</a></li>
             <li><a href="#preface" class="section-link">时间复杂度</a></li>
           </ul>
-        </li>
+        </li> -->
       </ul>
     </div>
     <div class="content with-sidebar header-gap">
       <div class="article" id="chapter0" data-title="第 0 章">
         <p class="pull-right">To dear Sherry</p>
         <h1 id="">第 0 章</h1>
-        <div id="c0-preface" class="topic section">
+        <div id="c0-preface" class="topic section" data-title="序">
           <h2>序</h2>
           <p>关于此系列文章</p>
           <p>此系列文章主要面向没有编程经验的初学者，我们希望通过介绍如何使用C语言设计程序，使读者了解计算机的结构和运行原理，了解C语言的基本语法和一些程序设计的best practice，掌握使用分解和抽象解决问题的方法，为读者进一步学习计算机专业知识奠定基础。</p>
@@ -472,7 +472,7 @@ int main() {
           <h3>运算的优先级</h3>
           <p>C语言中整型、浮点型的四则运算与数学上的四则运算有相同的优先级规则，有括号先计算括号里面的运算，先乘除，后加减，优先级相同则从左往右依次计算。（整型的取模运算优先级与乘除相同）</p>
           <div class="tip">以后我们还会学习C语言中更多的运算，例如逻辑运算、位移运算，C语言运算的优先级层级非常复杂，如果需要编写复杂的表达式，最稳妥的做法是<strong>适当运用括号</strong>，确保表达式的运算顺序与预期相同。</div>
-          <div class="exercise section" id="c1-chapter1-exercise">
+          <div class="exercise section" id="c1-chapter1-exercise" data-title="习题">
             <h3>实验题</h3>
             <ul>
               <li>
