@@ -331,7 +331,7 @@ int main() {
         </div>
         <div id="c1-add2-structure" data-title="add2.cpp 结构分析" class="topic">
           <h2>add2.cpp 结构分析</h2>
-          <p>上面一节我们分析了add2.cpp程序的各条语句，了解一门程序语言的语法细节是写出真确程序的必要条件，但是要成为一名优秀的程序员，还需要能够从语言的细节中跳出来，对程序有宏观的把握，这一节我们来分析一下这个程序的宏观结构。</p>
+          <p>上面一节我们分析了add2.cpp程序的各条语句，了解一门程序语言的语法细节是写出正确程序的必要条件，但是要成为一名优秀的程序员，还需要能够从语言的细节中跳出来，对程序有宏观的把握，这一节我们来分析一下这个程序的宏观结构。</p>
           <p>add2可分为4个阶段：</p>
           <ul>
             <li>变量定义阶段</li>
@@ -384,6 +384,75 @@ int main() {
             <h3>实验题</h3>
             <ul>
               <li><p class="question">请升级Hello world程序，使它可以读入用户的名字，然后输出<code>Hello name</code>，例如用户输入的是<code>Sherry</code>，程序会在屏幕上打印出<code>Hello Sherry!</code>，编译运行并测试几组数据，看程序是否正确运行？</p></li>
+            </ul>
+            <div class="tip">程序不能通过编译，或是不按预期运行这样的事情在写代码的时候时常遇到，这个过程叫做debug，和玩侦探差不多，要有耐心要仔细，要严谨推理，找出凶手后会很有成就感呢</div>
+          </div>
+        </div>
+
+        <div id="c1-var-const-exp" data-title="变量、常量和表达式" class="topic">
+          <h2>变量、常量和表达式</h2>
+          <p>当我们写一个需要执行一些运算的程序的时候，我们就需要用到表达式，C语言的表达式与数学上的表达式是类似的。例如之前的add2程序，我们用到的<code>n1 + n2</code>就是一个表达式。在C语言中，表达式是由terms和operators（运算符）组成的。operator，例如加号<code>+</code>、乘号<code>*</code>，表示一种运算的符号。在表达式中，一个term可以是：</p>
+          <ul>
+            <li>常量：例如直接出现在代码中的数字，像<code>0</code>和<code>3.14</code>都是常量，还有我们之前用到过的字符串常量<code>"Hello world!"</code>，这些都是常量。</li>
+            <li>变量：可以理解为程序中用来装数据的盒子，像add2中的<code>n1</code>、<code>n2</code>和<code>total</code>都是变量。</li>
+            <li>函数调用</li>
+            <li>被括号括起来的表达式</li>
+          </ul>
+          <p>在C语言中，一个变量有三个重要的属性，变量的名字、变量的类型、变量的值。</p>
+          <p>变量的<strong>命名规则</strong>：</p>
+          <ul>
+            <li>C语言的变量的第一个字符为下划线<code>_</code>或英文字母，后面可接数字、字母和下划线。</li>
+            <li>C语言的保留字不可以作为变量名。例如<code>int double if else while for</code>等，后面我们慢慢接触到更多的C语言关键字，C和C++语言的关键字有几十上百个，在此就不一一列举了，如果不小心把变量命名成了关键字，编译器在编译时会报错，发现有冲突给变量换一个名字即可。</li>
+          </ul>
+          <p>变量命名的<strong>建议</strong>：</p>
+          <ul>
+            <li>长度不要过长，变量名长度过长难敲代码也难读代码，例如<code>aVeryVeryVeryAdorableGirl</code></li>
+            <li>直观易懂，通过变量名容易推断出变量的意义，例如<code>username</code> <code>totalLength</code></li>
+            <li>小驼峰命名，所谓小驼峰就是变量的首字母为小写字母或下划线，之后单词的首字母为大写，例如<code>lovelyGirlSherry</code></li>
+          </ul>
+        </div>
+
+        <div id="c1-assignment" data-title="赋值语句" class="topic">
+          <h2>赋值语句</h2>
+          <p>在程序add2中，我们已经用到了赋值语句。在C语言中赋值语句满足以下所示的形式：</p>
+          <p><code>varialbe = expression;</code></p>
+          <p>赋值语句会把等号<code>=</code>右边表达式求得的值放入等号左边的变量里，例如在add2中<code>total = n1 + n2;</code>，赋值语句会把<code>n1 + n2</code>算出来的值放进total变量里。</p>
+          <div class="exercise" id="">
+            <h3>实验题</h3>
+            <ul>
+              <li>
+                <p class="question">已知n1 = 39, n2 =42。请问在执行赋值语句<code>n2 = n1;</code>后，n1与n2的值分别是多少？</p>
+                <p class="answer">执行该赋值语句后，n1的值为39，n2的值也为39。</p>
+              </li>
+              <li>
+                <p class="question">补全代码，实现程序要求的功能</p>
+                <pre><code>/*
+  File: swap.cpp
+  This program read two numbers, prints those two numbers,
+  and then exchange those two numbers, and prints them.
+*/
+
+#include &lt;iostream&gt;
+
+int main() {
+  int n1, n2;
+
+  std::cout << "1st number: ";
+  std::cin >> n1;
+
+  std::cout << "2st number: ";
+  std::cin >> n2;
+
+  std::cout << "before exchange: ";
+  std::cout << "n1= " << n1 << " , " << "n2= " << n2 << std::endl;
+
+  /* 请添加代码使n1 与 n2 的值互换 */
+
+  std::cout << "after exchange: ";
+  std::cout << "n1= " << n1 << " , " << "n2= " << n2 << std::endl;
+  return 0;
+}</code></pre>
+              </li>
             </ul>
           </div>
         </div>
