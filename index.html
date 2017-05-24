@@ -11,7 +11,7 @@
   <meta property="og:url" content="http://www.site.com/">
   <meta property="og:type" content="website">
   
-  <title></title>
+  <title>Sherry 的编程学园</title>
   <link rel="stylesheet" type="text/css" href="vendor/normalize/normalize.css">
   <link rel="stylesheet" type="text/css" href="vendor/bootstrap3/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/main.css">
@@ -64,7 +64,7 @@
     <div class="content with-sidebar header-gap">
       <div class="article" id="chapter0" data-title="第 0 章">
         <p class="pull-right">To dear Sherry</p>
-        <h1 id="">第 0 章</h1>
+        <h1>第 0 章</h1>
         <div id="c0-preface" class="topic section" data-title="序">
           <h2>序</h2>
           <p>关于此系列文章</p>
@@ -174,7 +174,7 @@
 #include &lt;iostream&gt;
 
 int main() {
-  std::cout << "Hello world";
+  std::cout &lt;&lt; "Hello world";
   return 0;
 }</code></pre>
               <figure>
@@ -247,7 +247,7 @@ int main() {
           <p>第一个部分是程序注释，C语言中<code>/*</code>和<code>*/</code>之间的内容为注释（Comment），注释部分在程序中是没有功能的，它不是给机器看的而是给人阅读的，注释可以方便别人理解你写的程序，也方便自己以后理解现在的程序。写好注释是造福别人也是造福自己，当你编写复杂的代码时，你要相信很可能过几天以后你自己也很难读懂你现在的代码，写好注释吧。</p>
           <p>第二部分<code>#include &lt;iostream&gt;</code>是引入了一个名为<code>iostream</code>（Input Output Stream）的头文件，这个头文件是C语言中与输入输出相关的库，引入了这个头文件，我们便可以在程序中使用这个库里定义好的东西，例如main函数中用到了<code>std::cout</code></p>
           <p>第三部分有4行代码，这段代码定义了一个名为<code>main</code>的函数，这个函数的返回值类型是<code>int</code>(integer 整数)，main后面有一对小括号<code>()</code>，括号里面表示的是这个函数接受的参数，这对括号里面没有东西，是空的，表示这个main函数不需要接受参数。</p>
-          <p>小括号后面跟了一对花括号<code>{}</code>，花括号中间包含了两行代码，第一行代码<code>std::cout << "Hello world";</code>这句代码的作用就是把<code>Hello world</code>输出到电脑屏幕上</p>
+          <p>小括号后面跟了一对花括号<code>{}</code>，花括号中间包含了两行代码，第一行代码<code>std::cout &lt;&lt; "Hello world";</code>这句代码的作用就是把<code>Hello world</code>输出到电脑屏幕上</p>
           <p>后面一行代码<code>return 0;</code>表示函数执行到此处返回一个整数0，函数运行结束。</p>
           <div class="exercise section" data-title="习题" id="chapter0-exercise">
             <h3>实验题</h3>
@@ -261,7 +261,7 @@ int main() {
                 <p class="answer"></p>
               </li>
               <li>
-                <p class="question">把代码<code>std::cout << "Hello world";</code>一行删去，观察程序编译运行的结果如何？</p>
+                <p class="question">把代码<code>std::cout &lt;&lt; "Hello world";</code>一行删去，观察程序编译运行的结果如何？</p>
                 <p class="answer"></p>
               </li>
               <li>
@@ -286,7 +286,7 @@ int main() {
       <!-- chapter 0 end -->
       <div class="article" id="chapter1" data-title="第 1 章 Learning by Example">
         <p class="pull-right">To dear Sherry</p>
-        <h1 id="">第 1 章 Learning by Example</h1>
+        <h1>第 1 章 Learning by Example</h1>
         <div id="c1-add2" data-title="A + B" class="topic section">
           <h2>一个计算两个数相加之和的程序</h2>
           <p>为了更进一步了解C语言，我们下面讨论一个比Hello world复杂一点点的程序，这个程序add2.cpp如下所示。这个程序要求使用者在键盘上输入两个数字，程序算出这个两个数字的和，然后输出到屏幕。把代码复制到Dev C++中编译运行一下吧！</p>
@@ -300,28 +300,28 @@ int main() {
 
 int main() {
   int n1, n2, total;
-  std::cout << "This program adds two numbers." << std::endl;
+  std::cout &lt;&lt; "This program adds two numbers." &lt;&lt; std::endl;
   
-  std::cout << "1st number: ";
-  std::cin >> n1;
+  std::cout &lt;&lt; "1st number: ";
+  std::cin &gt;&gt; n1;
   
-  std::cout << "2st number: ";
-  std::cin >> n2;
+  std::cout &lt;&lt; "2st number: ";
+  std::cin &gt;&gt; n2;
   
   total = n1 + n2;
-  std::cout << "The total is " << total << std::endl;
+  std::cout &lt;&lt; "The total is " &lt;&lt; total &lt;&lt; std::endl;
   return 0;
 }
 </code></pre>
           <p>首先我们仔细阅读以下代码，发现这个程序有很多元素与Hello World是相似的，比如程序最开始的部分，注释；头文件引入<code>#include &lt;iostream&gt;</code>;以及main函数。这些都是Hello world中也包含的。</p>
-          <p>我们看看main函数中的内容，main函数第二行<code>std::cout << "This program adds two numbers." << std::endl;</code> std::cout是我们再Hello World中已经接触过的，它后面跟了一个字符串常量，再后面的<code>std::endl</code>是新出现的元素，它表示换行。</p>
+          <p>我们看看main函数中的内容，main函数第二行<code>std::cout &lt;&lt; "This program adds two numbers." &lt;&lt; std::endl;</code> std::cout是我们再Hello World中已经接触过的，它后面跟了一个字符串常量，再后面的<code>std::endl</code>是新出现的元素，它表示换行。</p>
           <p>相比Hello World，这个程序引进了一些新的概念。</p>
           <p><code>main</code>函数的第1行<code>int n1, n2;</code>定义了两个<strong>变量</strong><code>n1</code>和<code>n2</code>，这两个变量的类型是<code>int</code><strong>整型 (integer)</strong>。</p>
           <p><strong>变量</strong>可以理解为装数据的盒子，我们不知道用户要输入两个什么数字，所以我们在程序中准备两个装数据的盒子<code>n1 n2</code>，用户一输入，我们就把输入数据装进装数据的盒子--变量里。</p>
-          <p>在main函数的第5行，<code>std::cin >> n1;</code>, std::cin 表示标准输入，在正常情况下我们的电脑上标准输入是从键盘上输入，程序执行到这一行，它会等待用户从键盘上输入一些内容，用户按下回车键后输入结束。std::cin 后面更了一个双箭头号<code>&gt;&gt;</code>,双箭头号后面是我们之前定义好的变量<code>n1</code>，它们表示把刚才键盘上输入的内容放进变量<code>n1</code>中（请把变量想象成一个盒子）。</p>
-          <p>在把用户第一个和第二个输入分别放进<code>n1 n2</code>里之后，main函数的第10行代码<code>total = n1 + n2</code>，它表示计算n1加n2的和，并把这个和放入total这个变量中（还是把它想象成一个装数据的盒子）。再往下面是一个输出语句<code>std::cout << "The total is " << total << std::endl;</code>输出结果。</p>
+          <p>在main函数的第5行，<code>std::cin &gt;&gt; n1;</code>, std::cin 表示标准输入，在正常情况下我们的电脑上标准输入是从键盘上输入，程序执行到这一行，它会等待用户从键盘上输入一些内容，用户按下回车键后输入结束。std::cin 后面更了一个双箭头号<code>&gt;&gt;</code>,双箭头号后面是我们之前定义好的变量<code>n1</code>，它们表示把刚才键盘上输入的内容放进变量<code>n1</code>中（请把变量想象成一个盒子）。</p>
+          <p>在把用户第一个和第二个输入分别放进<code>n1 n2</code>里之后，main函数的第10行代码<code>total = n1 + n2</code>，它表示计算n1加n2的和，并把这个和放入total这个变量中（还是把它想象成一个装数据的盒子）。再往下面是一个输出语句<code>std::cout &lt;&lt; "The total is " &lt;&lt; total &lt;&lt; std::endl;</code>输出结果。</p>
 
-          <div class="exercise" id="">
+          <div class="exercise">
             <h3>实验题</h3>
             <ul>
               <li><p class="question">运行程序尝试几组不同的输入，试试输入字母程序是什么反应，输入小数是什么反应，输入两个很大的整数看程序输出的结果是否正确？</p></li>
@@ -364,7 +364,7 @@ int main() {
           </ul>
           <p><code>int</code>整型，在add2中我们已经有使用过整型了，在C语言中，整型的取值范围是与系统的环境相关的，在32位计算机上，int的范围为[-2147483648, 2147483647]，可以初略记忆下，在目前大多数计算机平台上C语言整型的取值范围<strong>约在正负二十亿之间。</strong></p>
           <p><code>double</code>双精度浮点数，如果数据可能带有小数，则可选取double作为储存类型。</p>
-          <div class="exercise" id="">
+          <div class="exercise">
             <h3>实验题</h3>
             <ul>
               <li><p class="question">请升级add2程序，使它支持带小数的输入，编译运行并测试几组数据，看程序是否正确运行？</p></li>
@@ -379,8 +379,8 @@ int main() {
           <p>为了使用C++的string类型，我们需要在程序中引入string的头文件<code>#include &lt;string&gt;</code></p>
           <p>定义一个string变量：<code>std::string username;</code></p>
           <p>给string变量赋一个值：<code>username = "Sherry";</code></p>
-          <p>用std::cin读入一个值：<code>std::cin >> username;</code></p>
-          <div class="exercise" id="">
+          <p>用std::cin读入一个值：<code>std::cin &gt;&gt; username;</code></p>
+          <div class="exercise">
             <h3>实验题</h3>
             <ul>
               <li><p class="question">请升级Hello world程序，使它可以读入用户的名字，然后输出<code>Hello name</code>，例如用户输入的是<code>Sherry</code>，程序会在屏幕上打印出<code>Hello Sherry!</code>，编译运行并测试几组数据，看程序是否正确运行？</p></li>
@@ -417,7 +417,7 @@ int main() {
           <p>在程序add2中，我们已经用到了赋值语句。在C语言中赋值语句满足以下所示的形式：</p>
           <p><code>varialbe = expression;</code></p>
           <p>赋值语句会把等号<code>=</code>右边表达式求得的值放入等号左边的变量里，例如在add2中<code>total = n1 + n2;</code>，赋值语句会把<code>n1 + n2</code>算出来的值放进total变量里。</p>
-          <div class="exercise" id="">
+          <div class="exercise">
             <h3>实验题</h3>
             <ul>
               <li>
@@ -437,19 +437,19 @@ int main() {
 int main() {
   int n1, n2;
 
-  std::cout << "1st number: ";
-  std::cin >> n1;
+  std::cout &lt;&lt; "1st number: ";
+  std::cin &gt;&gt; n1;
 
-  std::cout << "2st number: ";
-  std::cin >> n2;
+  std::cout &lt;&lt; "2st number: ";
+  std::cin &gt;&gt; n2;
 
-  std::cout << "before exchange: ";
-  std::cout << "n1= " << n1 << " , " << "n2= " << n2 << std::endl;
+  std::cout &lt;&lt; "before exchange: ";
+  std::cout &lt;&lt; "n1= " &lt;&lt; n1 &lt;&lt; " , " &lt;&lt; "n2= " &lt;&lt; n2 &lt;&lt; std::endl;
 
   /* 请添加代码使n1 与 n2 的值互换 */
 
-  std::cout << "after exchange: ";
-  std::cout << "n1= " << n1 << " , " << "n2= " << n2 << std::endl;
+  std::cout &lt;&lt; "after exchange: ";
+  std::cout &lt;&lt; "n1= " &lt;&lt; n1 &lt;&lt; " , " &lt;&lt; "n2= " &lt;&lt; n2 &lt;&lt; std::endl;
   return 0;
 }</code></pre>
               </li>
@@ -464,15 +464,30 @@ int main() {
             <li><code>+</code>：加法运算</li>
             <li><code>-</code>：减法运算</li>
             <li><code>*</code>：乘法运算</li>
-            <li><code>/</code>：除法运算。在C语言中，两个整型相除，其结果仍为整型，例如9/4，其结果为2，余数部分会被扔弃掉。</li>
+            <li><code>/</code>：除法运算。在C语言中，两个整型相除，其结果仍为整型，<strong>例如9/4，其结果为2，余数部分会被扔弃掉。</strong></li>
             <li><code>%</code>：取余（取模）运算。C语言中整型还支持取模运算。整型A模整型B<code>A%B</code>，其结果仍为整型，例如9%4，其结果为1。浮点类型例如<code>double</code>没有取模运算。</li>
           </ul>
           <h3>浮点型的运算</h3>
           <p>在C语言中，浮点型（例如double）支持加、减、乘、除四则运算。其规则与数学上的四则运算相似。</p>
           <h3>运算的优先级</h3>
           <p>C语言中整型、浮点型的四则运算与数学上的四则运算有相同的优先级规则，有括号先计算括号里面的运算，先乘除，后加减，优先级相同则从左往右依次计算。（整型的取模运算优先级与乘除相同）</p>
-          <div class="tip">以后我们还会学习C语言中更多的运算，例如逻辑运算、位移运算，C语言运算的优先级层级非常复杂，如果需要编写复杂的表达式，最稳妥的做法是<strong>适当运用括号</strong>，确保表达式的运算顺序与预期相同。</div>
-          <div class="exercise section" id="c1-chapter1-exercise" data-title="习题">
+          <div class="tip"><p>以后我们还会学习C语言中更多的运算，例如逻辑运算、位移运算，C语言运算的优先级层级非常复杂，如果需要编写复杂的表达式，最稳妥的做法是<strong>适当运用括号</strong>，确保表达式的运算顺序与预期相同。</p></div>
+        </div>
+
+        <div id="c1-type-conversion" data-title="类型转换" class="topic section">
+          <h2>类型转换</h2>
+          <p>前面我们已经介绍了整型和浮点型的运算，整型与整型的运算结果依然为整型，浮点型与浮点型的运算结果依然为浮点型。</p>
+          <h3>运算符与自动类型转换</h3>
+          <p>如果一个运算符左边和右边的运算数类型不同会发生什么呢？例如<code>2 + 1.5</code>，在C语言中如果一个运算符的一边是<code>int</code>另一边是<code>double</code>，则<code>int</code>会被自动转换成<code>double</code>进行运算，变成<code>2.0 + 1.5</code>。double转成int可能会造成小数部分被截断丢失信息，而int转成double则信息不会丢失，所以运算符左右两边既有int又有double的情况下，C语言会自动将int的值转换成double的值进行运算，这个过程叫作类型提升。</p>
+          <h3>赋值与自动类型转换</h3>
+          <p>在赋值语句中，如果左右两边的类型不同，则C语言会自动将赋值符号<code>=</code>右边的值转换成赋值符左边变量类型的值。例如<code>double total = 0</code>等价于<code>double total = 0.0</code>，又例如<code>int x = 1.99</code>等价于<code>int x = 1</code>。</p>
+          <p><code>double</code>类型的值转换成<code>int</code>类型的值时，C语言<strong>并不是</strong>以四舍五入的方式转换其值，而是直接将小数部分截断，只留下整数部分。</p>
+          <h3>显式类型转换</h3>
+          <p>C语言的自动类型转换也叫作隐式类型转换，我们还可以显式的进行强制类型转换，例如<code>double ratio = (double)5 / 9;</code>，<code>(double) 5</code>会将整型数5转换成成浮点型数5.0。</p>
+          <p>延伸阅读：<a href="https://www.tutorialspoint.com/cprogramming/c_type_casting.htm">C - Type Casting</a></p>
+        </div>
+
+        <div class="topic exercise section" id="c1-chapter1-exercise" data-title="习题">
             <h3>实验题</h3>
             <ul>
               <li>
@@ -482,12 +497,24 @@ int main() {
                 <p>Zeo最近去美国旅游，美国的天气预报用的都是华氏温度，Zeo感到非常不习惯，已知华氏度(Fahrenheit)转摄氏度(Celsius)的公式为：<p>
                 <figure style="border:none;">
                   <picture>
-                    <img src="http://chart.googleapis.com/chart?cht=tx&chl=C%3D%5Cfrac%7B5%7D%7B9%7D%5Ctimes%20(F-32)" style="border:none;" />
+                    <img src="http://chart.googleapis.com/chart?cht=tx&chl=C%3D%5Cfrac%7B5%7D%7B9%7D%5Ctimes%20(F-32)" style="border:none;" alt="C=(F-32)*5/9" />
                   </picture>
                 </figure>
                 <p>请你为Zeo写一个将华氏度转换为摄氏度的程序，该程序读入一个华氏度数据，输出其对应的摄氏温度。（参考资料1：<a href="https://zh.wikipedia.org/wiki/%E5%8D%8E%E6%B0%8F%E6%B8%A9%E6%A0%87">华氏温标</a>）</p>
+                <p class="answer">你的代码遇到了什么问题？为什么？你选用的是int类型还是double类型？为什么你要这样选择？</p>
               </li>
-              <li>Zeo感觉这个程序输出的摄氏度小数点后面的数字太多了，可不可只保留小数点后1位输出。（参考资料1：<a href="https://stackoverflow.com/questions/13728425/print-double-with-precision-4-using-cout">print double with precision 4 using cout</a> 参考资料2：<a href="http://www.cplusplus.com/reference/iomanip/setprecision/">setprecision</a>）</li>
+              <li>
+                <p class="question">Zeo感觉这个程序输出的摄氏度小数点后面的数字太多了，可不可只保留小数点后1位输出。（参考资料1：<a href="https://stackoverflow.com/questions/13728425/print-double-with-precision-4-using-cout">print double with precision 4 using cout</a> 参考资料2：<a href="http://www.cplusplus.com/reference/iomanip/setprecision/">setprecision</a>）</p>
+              </li>
+              <li>
+                <p class="question">Zeo看了看程序的效果，感觉保留一位小数输出的效果很不错，她觉得如果结果可以四舍五入精确到整数输出就更棒了，请问你可以按照Zeo的要求优化你的程序吗？</p>
+                <p class="answer"></p>
+              </li>
+              <li>
+                <p class="question">请问ratioA与ratioB的值分别是多少？请编写程序验证你的答案。</p>
+                <pre><code>  double ratioA = 5 / (double) 9;
+  double ratioB = 5 / 9;</code></pre>
+              </li>
             </ul>
             <h3>知识回顾</h3>
             <ul>
@@ -529,8 +556,6 @@ int main() {
               </li>
             </ul>
           </div>
-        </div>
-
       </div>
       <!-- chapter 1 end -->
     </div>
