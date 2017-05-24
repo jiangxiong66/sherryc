@@ -168,7 +168,7 @@
             </li>
             <li>
               <p><strong>Step 2.</strong>编写C语言源程序（可复制粘贴以下代码）</p>
-              <pre><code class="c">/*
+              <pre><code class="c++">/*
   This program prints the message "Hello world" on the screen.
 */
 
@@ -291,7 +291,7 @@ int main() {
         <div id="c1-add2" data-title="A + B" class="topic section">
           <h2>一个计算两个数相加之和的程序</h2>
           <p>为了更进一步了解C语言，我们下面讨论一个比Hello world复杂一点点的程序，这个程序add2.cpp如下所示。这个程序要求使用者在键盘上输入两个数字，程序算出这个两个数字的和，然后输出到屏幕。把代码复制到Dev C++中编译运行一下吧！</p>
-          <pre><code>/*
+          <pre><code class="c++">/*
   File: add2.cpp
   This program read two numbers, add them together,
   and prints their sum.
@@ -427,7 +427,7 @@ int main() {
               </li>
               <li>
                 <p class="question">补全代码，实现程序要求的功能</p>
-                <pre><code>/*
+                <pre><code class="c++">/*
   File: swap.cpp
   This program read two numbers, prints those two numbers,
   and then exchange those two numbers, and prints them.
@@ -513,7 +513,7 @@ int main() {
             </li>
             <li>
               <p class="question">请问ratioA与ratioB的值分别是多少？请编写程序验证你的答案。</p>
-              <pre><code>  double ratioA = 5 / (double) 9;
+              <pre><code class="c++">  double ratioA = 5 / (double) 9;
   double ratioB = 5 / 9;</code></pre>
             </li>
           </ul>
@@ -577,20 +577,141 @@ int main() {
         <div id="c2-shortcut-assignment" class="topic section" data-title="快捷赋值语句">
           <h2>快捷赋值语句</h2>
           <p>上一章我们学习了赋值语句，例如把两个整型数n1、n2相加的和赋值给变量total<code>total = n1 + n2</code>，又例如，一个记录银行账户的程序，当前的余额存在变量balance里，用户往账户存了x的钱，那么账户的余额便发生了变动，新的余额为newBalance，那么我们可以一下代码来表示余额更新的动作：</p>
-          <pre><code>  newBalance = balance + x;
+          <pre><code class="c++">  newBalance = balance + x;
   balance = newBalance;</code></pre>
           <p>这段代码可以简化一下：</p>
-          <pre><code>  balance = balance + x;</code></pre>
+          <pre><code class="c++">  balance = balance + x;</code></pre>
           <p>由于这类操作是非常常见的，所以C语言专门提供了一种快捷方法。</p>
-          <pre><code>  balance += x</code></pre>
+          <pre><code class="c++">  balance += x</code></pre>
           <p>除了<code>+=</code>，C还提供了<code>-=</code><code>*=</code><code>/=</code>等一系列快捷赋值操作，对于自增1、自减1，C语言提供了<code>++</code><code>--</code>两个快捷操作。请记住这些快捷操作，可以少码很多字。</p>
-          <pre><code>  balance += x; /* 等价于 balance = balance + x */
+          <pre><code class="c++">  balance += x; /* 等价于 balance = balance + x */
   balance -= x; /* 等价于 balance = balance - x */
   balance *= x; /* 等价于 balance = balance * x */
   balance /= x; /* 等价于 balance = balance / x */
 
   balance++; /* 等价于 balance = balance + 1 */
   balance--; /* 等价于 balance = balance - 1 */</code></pre>
+        </div>
+        <div id="c2-loop-statement" class="topic section" data-title="循环语句">
+          <h2>循环语句</h2>
+          <p>计算机一个很大的优点就是，它会开开心心的做你让它做的任何事情，不管重复多少遍，比如让他说十遍"You are so beautiful, Sherry!"</p>
+          <pre><code class="c++">  std::cout &lt;&lt; "You are so beautiful, Sherry!" &lt;&lt; std::endl;
+  std::cout &lt;&lt; "You are so beautiful, Sherry!" &lt;&lt; std::endl;
+  std::cout &lt;&lt; "You are so beautiful, Sherry!" &lt;&lt; std::endl;
+  std::cout &lt;&lt; "You are so beautiful, Sherry!" &lt;&lt; std::endl;
+  std::cout &lt;&lt; "You are so beautiful, Sherry!" &lt;&lt; std::endl;
+  std::cout &lt;&lt; "You are so beautiful, Sherry!" &lt;&lt; std::endl;
+  std::cout &lt;&lt; "You are so beautiful, Sherry!" &lt;&lt; std::endl;
+  std::cout &lt;&lt; "You are so beautiful, Sherry!" &lt;&lt; std::endl;
+  std::cout &lt;&lt; "You are so beautiful, Sherry!" &lt;&lt; std::endl;
+  std::cout &lt;&lt; "You are so beautiful, Sherry!" &lt;&lt; std::endl;</code></pre>
+          <p>比如我们可以让他说一百遍"You are so beautiful, Sherry!"，一千遍，一万遍，甚至更多。不过好像问题来了，这样复制粘贴代码太累了，C语言有没有更方便的写法呢？又或者能不能让Sherry自己输入一个数字，Sherry输入的数字是多少，电脑就说多少遍"You are so beautiful, Sherry!"？</p>
+          <p>可以的，C语言除了可以<strong>顺序执行代码</strong>，还提供了<strong>循环执行某段代码</strong>N次的语句。</p>
+          <h3>循环N次的语句 for</h3>
+          <pre><code class="c++">  for(int i = 0; i &lt; n; i++) {
+    /* 需要循环执行n次的代码*/
+  }</code></pre>
+          <p>以上的代码，for后面跟着一对小括号，括号里有几个语句，我们先不纠结for语句的细节，我们就把它当成一个黑魔法，只要把需要重复执行的事情放在for语句的花括号里<code>{}</code>，for语句就会循环执行这个事情，只要指明n是多少值，for就是循环多少次</p>
+          <pre><code class="c++">  /* 打印100次 You are so beautiful, Sherry*/
+  for(int i = 0; i &lt; 100; i++) {
+    std::cout &lt;&lt; "You are so beautiful, Sherry!" &lt;&lt; std::endl;
+  }</code></pre>
+          <div class="exercise">
+            <h3>实验题</h3>
+            <ul>
+              <li>
+                <p class="question">请编写一个程序，它在屏幕上输出10次<code>Sherry did a good job!</code></p>
+              </li>
+              <li>
+                <p class="question">请编写一个程序，它让用户输入一个整数n，然后再屏幕上输出n次<code>Sherry is great!</code></p>
+              </li>
+              <li>
+                <p class="question">Zeo在美国游玩了5天，她记下了这5天中没一天的花费，请你办Zeo写一个程序，这个程序可以读入Zeo这5天每一天的花费，然后计算并输出Zeo总的花费是多少。</p>
+              </li>
+            </ul>
+          </div>
+          <h3>循环语句 while</h3>
+          <p>C语言还提供了另外一种循环语句</p>
+          <pre><code class="c++">  while(/* 条件 */) {
+    /* 需要循环执行的代码 */
+  }</code></pre>
+          <p>下面我们通过一个实例，讲解一下while语句最常见的使用方法。请思考一下怎样用whie写一个求1 + 2 + 3 + ... + 100的程序。</p>
+          <p>首先我们需要用一个变量来保存求和的结果，所以我们定义一个变量<code>int total;</code>，开始计算这个和之前，total应该设为0，<code>total = 0</code>。</p>
+          <p>我们需要从1加到100，所以我们定义一个变量<code>int x;</code>，这个变量最开始的值我们设为1 <code>x = 1;</code></p>
+          <p>开始求和计算，<code>total = total + x</code>，然后计算下一个要相加的数<code>x = x + 1</code>，不断执行这个过程，直到x为100。（用代码可以表示如下）</p>
+          <pre><code class="c++">  int total, x;
+
+  total = 0;
+  x = 1;
+  total = total + x;
+
+  x = x + 1;
+  total = total + x;
+
+  x = x + 1;
+  total = total + x;
+
+  ...
+
+  /* 一直加到 x == 100 */ </code></pre>
+          <p>上面的这种写法当然是可行的，不过太麻烦了，还容易写错。下面是用while语句完成相同功能的代码</p>
+          <pre><code class="c++">  int total, x;
+
+  total = 0;
+  x = 1;
+
+  while(x &lt;= 100) {
+    total = total + x;
+    x = x + 1;
+  }</code></pre>
+          <div class="exercise">
+            <h3>实验题</h3>
+            <ul>
+              <li>
+                <p class="question">请编写一个自然数列求和程序，该程序读入一个整数n，然后计算自然数列1 + 2 + 3 + ... + n的和并输出。</p>
+              </li>
+              <li>
+                <p class="question">这一章我们介绍了C语言的快捷赋值语句，请优化自然数列求和程序，在可以使用快捷赋值语句的地方使用快捷赋值语句。</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div id="c2-if-statement" class="topic section" data-title="条件执行语句">
+          <h2>条件执行语句</h2>
+          <p>C语言不仅可以顺序执行某段代码、循环执行某段代码，它还提供了按条件执行某段代码的功能。</p>
+          <pre><code class="c++">  if(/* 某条件满足 */) {
+    /* 需要执行的代码 */
+  }</code></pre>
+          <pre><code class="c++">  if(/* 某条件满足 */) {
+    /* 条件满足需要执行的代码 */
+  } else {
+    /* 条件不满足需要执行的代码 */
+  }</code></pre>
+          <p>if 语句的小括号里需要一个bool类型的值，bool类型的取值只有两个<code>true</code> 和 <code>false</code>，如果给到if语句小括号里的值是<code>true</code>则if语句大括号里的语句执行，否则不执行。C语言中关系表达式可产生bool类型的值。关系表达式包含以下几种：</p>
+          <ul>
+            <li>等于：<code>==</code></li>
+            <li>不等于：<code>!=</code></li>
+            <li>大于：<code>&gt;</code></li>
+            <li>小于：<code>&lt;</code></li>
+            <li>大于等于：<code>&gt;=</code></li>
+            <li>小于等于：<code>&lt;=</code></li>
+          </ul>
+          <p>例如，heartbeat是用户的心跳速度，如果心跳速度大于100则输出心跳过快，实例代码如下：</p>
+          <pre><code class="c++">  if(heartbeat > 100) {
+    std::cout &lt;&lt; "Too fast!" &lt;&lt; std::endl;
+  }</code></pre>
+          <div class="exercise">
+            <h3>实验题</h3>
+            <ul>
+              <li>
+                <p class="question">Zeo在美国游玩了5天，她记下了这5天中没一天的花费，请你办Zeo写一个程序，这个程序可以读入Zeo这5天每一天的花费，然后计算并输出Zeo总的花费是多少，如果Zeo的总花费超过了10000，则输出<code>下个月吃土吧</code>。</p>
+              </li>
+              <li>
+                <p class="question">John正在为医院开发一个测量心跳的设备，他已经完成了关键模块的开发，他的模块可以测量出用户每分钟的心跳次数，请你为他开发一个诊断模块，他的模块会向你的程序输入一个整数，这个整数代表用户一分钟的心跳数，已知成年人正常的心跳速度是每分钟60至100下，如果用户的心跳低于60，你的程序要输出一条诊断信息<code>Too Slow!</code>，如果用户心跳高于100，你的程序输出<code>Too Fast!</code>，如果用户心跳在正常范围则程序输出<code>Normal</code>。</p>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
       <!-- chapter 2 end -->
