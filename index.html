@@ -488,74 +488,74 @@ int main() {
         </div>
 
         <div class="topic exercise section" id="c1-chapter1-exercise" data-title="习题">
-            <h3>实验题</h3>
-            <ul>
-              <li>
-                <p class="question">请先在纸上计算表达式：<code>8 * (7 - 6 + 5) % (4 + 3 / 2) - 1</code>的结果，然后用程序计算该表达式，对比一下结果，验证你的计算是否正确。</p>
-              </li>
-              <li>
-                <p>Zeo最近去美国旅游，美国的天气预报用的都是华氏温度，Zeo感到非常不习惯，已知华氏度(Fahrenheit)转摄氏度(Celsius)的公式为：<p>
-                <figure style="border:none;">
-                  <picture>
-                    <img src="http://chart.googleapis.com/chart?cht=tx&chl=C%3D%5Cfrac%7B5%7D%7B9%7D%5Ctimes%20(F-32)" style="border:none;" alt="C=(F-32)*5/9" />
-                  </picture>
-                </figure>
-                <p>请你为Zeo写一个将华氏度转换为摄氏度的程序，该程序读入一个华氏度数据，输出其对应的摄氏温度。（参考资料1：<a href="https://zh.wikipedia.org/wiki/%E5%8D%8E%E6%B0%8F%E6%B8%A9%E6%A0%87">华氏温标</a>）</p>
-                <p class="answer">你的代码遇到了什么问题？为什么？你选用的是int类型还是double类型？为什么你要这样选择？</p>
-              </li>
-              <li>
-                <p class="question">Zeo感觉这个程序输出的摄氏度小数点后面的数字太多了，可不可只保留小数点后1位输出。（参考资料1：<a href="https://stackoverflow.com/questions/13728425/print-double-with-precision-4-using-cout">print double with precision 4 using cout</a> 参考资料2：<a href="http://www.cplusplus.com/reference/iomanip/setprecision/">setprecision</a>）</p>
-              </li>
-              <li>
-                <p class="question">Zeo看了看程序的效果，感觉保留一位小数输出的效果很不错，她觉得如果结果可以四舍五入精确到整数输出就更棒了，请问你可以按照Zeo的要求优化你的程序吗？</p>
-                <p class="answer"></p>
-              </li>
-              <li>
-                <p class="question">请问ratioA与ratioB的值分别是多少？请编写程序验证你的答案。</p>
-                <pre><code>  double ratioA = 5 / (double) 9;
+          <h3>实验题</h3>
+          <ul>
+            <li>
+              <p class="question">请先在纸上计算表达式：<code>8 * (7 - 6 + 5) % (4 + 3 / 2) - 1</code>的结果，然后用程序计算该表达式，对比一下结果，验证你的计算是否正确。</p>
+            </li>
+            <li>
+              <p>Zeo最近去美国旅游，美国的天气预报用的都是华氏温度，Zeo感到非常不习惯，已知华氏度(Fahrenheit)转摄氏度(Celsius)的公式为：<p>
+              <figure style="border:none;">
+                <picture>
+                  <img src="http://chart.googleapis.com/chart?cht=tx&chl=C%3D%5Cfrac%7B5%7D%7B9%7D%5Ctimes%20(F-32)" style="border:none;" alt="C=(F-32)*5/9" />
+                </picture>
+              </figure>
+              <p>请你为Zeo写一个将华氏度转换为摄氏度的程序，该程序读入一个华氏度数据，输出其对应的摄氏温度。（参考资料1：<a href="https://zh.wikipedia.org/wiki/%E5%8D%8E%E6%B0%8F%E6%B8%A9%E6%A0%87">华氏温标</a>）</p>
+              <p class="answer">你的代码遇到了什么问题？为什么？你选用的是int类型还是double类型？为什么你要这样选择？</p>
+            </li>
+            <li>
+              <p class="question">Zeo感觉这个程序输出的摄氏度小数点后面的数字太多了，可不可只保留小数点后1位输出。（参考资料1：<a href="https://stackoverflow.com/questions/13728425/print-double-with-precision-4-using-cout">print double with precision 4 using cout</a> 参考资料2：<a href="http://www.cplusplus.com/reference/iomanip/setprecision/">setprecision</a>）</p>
+            </li>
+            <li>
+              <p class="question">Zeo看了看程序的效果，感觉保留一位小数输出的效果很不错，她觉得如果结果可以四舍五入精确到整数输出就更棒了，请问你可以按照Zeo的要求优化你的程序吗？</p>
+              <p class="answer"></p>
+            </li>
+            <li>
+              <p class="question">请问ratioA与ratioB的值分别是多少？请编写程序验证你的答案。</p>
+              <pre><code>  double ratioA = 5 / (double) 9;
   double ratioB = 5 / 9;</code></pre>
-              </li>
-            </ul>
-            <h3>知识回顾</h3>
-            <ul>
-              <li>
-                <p class="question">程序中注释的作用是什么？为什么要好注释？</p>
-                <p class="answer"></p>
-              </li>
-              <li>
-                <p class="question">使用<code>std::cin</code><code>std::cout</code><code>std::endl</code>分别要引入哪些头文件？</p>
-                <p class="answer"></p>
-              </li>
-              <li>
-                <p class="question">一个数据类型包含哪些要素？</p>
-                <p class="answer">值域和其所支持的操作</p>
-              </li>
-              <li>
-                <p class="question">C语言中整型<code>int</code>包含哪些操作（运算）？</p>
-                <p class="answer">加、减、乘、除、取模</p>
-              </li>
-              <li>
-                <p class="question">C语言中浮点型<code>double</code>包含哪些操作（运算）？</p>
-                <p class="answer">加、减、乘、除</p>
-              </li>
-              <li>
-                <p class="question">C语言有内置的字符串类型吗？</p>
-                <p class="answer">没有，string是C++库提供的字符串类型</p>
-              </li>
-              <li>
-                <p class="question">一个变量包含哪几个重要属性？</p>
-                <p class="answer">三个，变量的名字、变量的类型、变量的值。</p>
-              </li>
-              <li>
-                <p class="question">请简述小驼峰命名规范。</p>
-                <p class="answer"></p>
-              </li>
-              <li>
-                <p class="question">如果要写一个非常复杂的表达式，有很多运算的优先级你都不太确定，请问你该怎样确保编写的表达式运算顺序的正确性？</p>
-                <p class="answer"></p>
-              </li>
-            </ul>
-          </div>
+            </li>
+          </ul>
+          <h3>知识回顾</h3>
+          <ul>
+            <li>
+              <p class="question">程序中注释的作用是什么？为什么要好注释？</p>
+              <p class="answer"></p>
+            </li>
+            <li>
+              <p class="question">使用<code>std::cin</code><code>std::cout</code><code>std::endl</code>分别要引入哪些头文件？</p>
+              <p class="answer"></p>
+            </li>
+            <li>
+              <p class="question">一个数据类型包含哪些要素？</p>
+              <p class="answer">值域和其所支持的操作</p>
+            </li>
+            <li>
+              <p class="question">C语言中整型<code>int</code>包含哪些操作（运算）？</p>
+              <p class="answer">加、减、乘、除、取模</p>
+            </li>
+            <li>
+              <p class="question">C语言中浮点型<code>double</code>包含哪些操作（运算）？</p>
+              <p class="answer">加、减、乘、除</p>
+            </li>
+            <li>
+              <p class="question">C语言有内置的字符串类型吗？</p>
+              <p class="answer">没有，string是C++库提供的字符串类型</p>
+            </li>
+            <li>
+              <p class="question">一个变量包含哪几个重要属性？</p>
+              <p class="answer">三个，变量的名字、变量的类型、变量的值。</p>
+            </li>
+            <li>
+              <p class="question">请简述小驼峰命名规范。</p>
+              <p class="answer"></p>
+            </li>
+            <li>
+              <p class="question">如果要写一个非常复杂的表达式，有很多运算的优先级你都不太确定，请问你该怎样确保编写的表达式运算顺序的正确性？</p>
+              <p class="answer"></p>
+            </li>
+          </ul>
+        </div>
       </div>
       <!-- chapter 1 end -->
     </div>
