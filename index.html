@@ -559,6 +559,41 @@ int main() {
         </div>
       </div>
       <!-- chapter 1 end -->
+
+      <div class="article" id="chapter2" data-title="第 2 章 Problem Solving">
+        <p class="pull-right">To dear Sherry</p>
+        <h1>第 2 章 Problem Solving</h1>
+        <div id="c2-idioms-paradigms" class="topic section" data-title="关于套路">
+          <h2>Idioms and Paradigm</h2>
+          <blockquote>
+            <p>桃之夭夭，灼灼其华。之子于归，宜其室家。</p>
+            <p>桃之夭夭，有蕡其实。之子于归，宜其家室。</p>
+            <p>桃之夭夭，其叶蓁蓁。之子于归，宜其家人。</p>
+          </blockquote>
+          <p>套路，都是套路，诗有诗的套路，词有词的套路，小说有小说的套路，<a href="https://daily.zhihu.com/story/9414110">流行音乐有流行音乐的套路</a>，写程序也有写程序的套路。弄明白了套路，创作的路就好走了，一切都是有迹可循的，有了套路，天黑也都不会再害怕。</p>
+          <p>C语言是一门语言。正如学习英语，我们不仅要学习它的单词和语法，我们还要学习它的习惯性用法，它的表达方式，最终能够掌握它的使用，通过它获取和交流信息。C语言也有自己的关键字和语法，随着我们对C语言编程的深入学习，我们会慢慢发现很多常用的模式和片段，就如一个一个习语和金句。在早期学习编程的过程中，我们不宜过多的纠缠在编程语言的语法细节上，把目光放大一点，从一个更大图景来观察程序，你会发现C语言也有自己惯用的表达方式和解决问题的模式，我们就是要掌握这些表达方式和解决问题的模式，最终可以轻松地把遇到的问题用C语言表达出来，让计算机帮助我们解决问题。</p>
+          <p>我们把程序中一个或一些组成某个特定功能的代码片段称之为 programming idiom，例如，从键盘上输入一个整数，通过前面的学习，我们可以很快的想到，完成这个功能需要用到<code>int n;</code> <code>std::cin >> n;</code> 这样的代码，我们唯一需要改动只有n这个变量名。</p>
+        </div>
+        <div id="c2-shortcut-assignment" class="topic section" data-title="快捷赋值语句">
+          <h2>快捷赋值语句</h2>
+          <p>上一章我们学习了赋值语句，例如把两个整型数n1、n2相加的和赋值给变量total<code>total = n1 + n2</code>，又例如，一个记录银行账户的程序，当前的余额存在变量balance里，用户往账户存了x的钱，那么账户的余额便发生了变动，新的余额为newBalance，那么我们可以一下代码来表示余额更新的动作：</p>
+          <pre><code>  newBalance = balance + x;
+  balance = newBalance;</code></pre>
+          <p>这段代码可以简化一下：</p>
+          <pre><code>  balance = balance + x;</code></pre>
+          <p>由于这类操作是非常常见的，所以C语言专门提供了一种快捷方法。</p>
+          <pre><code>  balance += x</code></pre>
+          <p>除了<code>+=</code>，C还提供了<code>-=</code><code>*=</code><code>/=</code>等一系列快捷赋值操作，对于自增1、自减1，C语言提供了<code>++</code><code>--</code>两个快捷操作。请记住这些快捷操作，可以少码很多字。</p>
+          <pre><code>  balance += x; /* 等价于 balance = balance + x */
+  balance -= x; /* 等价于 balance = balance - x */
+  balance *= x; /* 等价于 balance = balance * x */
+  balance /= x; /* 等价于 balance = balance / x */
+
+  balance++; /* 等价于 balance = balance + 1 */
+  balance--; /* 等价于 balance = balance - 1 */</code></pre>
+        </div>
+      </div>
+      <!-- chapter 2 end -->
     </div>
   </div>
 
