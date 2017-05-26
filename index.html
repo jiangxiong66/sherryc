@@ -572,7 +572,7 @@ int main() {
           </blockquote>
           <p>套路，都是套路，诗有诗的套路，词有词的套路，小说有小说的套路，<a href="https://daily.zhihu.com/story/9414110">流行音乐有流行音乐的套路</a>，写程序也有写程序的套路。弄明白了套路，创作的路就好走了，一切都是有迹可循的，有了套路，天黑也都不会再害怕。</p>
           <p>C语言是一门语言。正如学习英语，我们不仅要学习它的单词和语法，我们还要学习它的习惯性用法，它的表达方式，最终能够掌握它的使用，通过它获取和交流信息。C语言也有自己的关键字和语法，随着我们对C语言编程的深入学习，我们会慢慢发现很多常用的模式和片段，就如一个一个习语和金句。在早期学习编程的过程中，我们不宜过多的纠缠在编程语言的语法细节上，把目光放大一点，从一个更大图景来观察程序，你会发现C语言也有自己惯用的表达方式和解决问题的模式，我们就是要掌握这些表达方式和解决问题的模式，最终可以轻松地把遇到的问题用C语言表达出来，让计算机帮助我们解决问题。</p>
-          <p>我们把程序中一个或一些组成某个特定功能的代码片段称之为 programming idiom，例如，从键盘上输入一个整数，通过前面的学习，我们可以很快的想到，完成这个功能需要用到<code>int n;</code> <code>std::cin >> n;</code> 这样的代码，我们唯一需要改动只有n这个变量名。</p>
+          <p>我们把程序中一个或一些组成某个特定功能的代码片段称之为 programming idiom，例如，从键盘上输入一个整数，通过前面的学习，我们可以很快的想到，完成这个功能需要用到<code>int n;</code> <code>std::cin &gt;&gt; n;</code> 这样的代码，我们唯一需要改动只有n这个变量名。</p>
         </div>
         <div id="c2-shortcut-assignment" class="topic section" data-title="快捷赋值语句">
           <h2>快捷赋值语句</h2>
@@ -709,6 +709,77 @@ int main() {
               </li>
               <li>
                 <p class="question">John正在为医院开发一个测量心跳的设备，他已经完成了关键模块的开发，他的模块可以测量出用户每分钟的心跳次数，请你为他开发一个诊断模块，他的模块会向你的程序输入一个整数，这个整数代表用户一分钟的心跳数，已知成年人正常的心跳速度是每分钟60至100下，如果用户的心跳低于60，你的程序要输出一条诊断信息<code>Too Slow!</code>，如果用户心跳高于100，你的程序输出<code>Too Fast!</code>，如果用户心跳在正常范围则程序输出<code>Normal</code>。</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div id="c2-formatted-output" class="topic section" data-title="格式化输出">
+          <h2>格式化输出</h2>
+          <p>参考资料：<a href="https://stackoverflow.com/questions/275484/cout-formatting">cout formatting</a> | <a href="http://www.cprogramming.com/tutorial/iomanip.html">Formatting Cout Output in C++ using iomanip</a></p>
+          <div class="tip">
+            <p>使用setw需引入头文件<code>#include &lt;iomanip&gt;</code></p>
+            <p>setw在std命名空间里，需要写成<code>std::setw</code></p>
+            <p>程序可以在程序的头部<code>using namespace std;</code>，使用std命名空间后，<code>std::cout std::cin std::end ..</code>的<code>std::</code>可省略。例：</p>
+            <figure>
+              <picture>
+                <img src="img/namespace.png" alt="using namespace示意图">
+              </picture>
+              <figcaption>using namespace</figcaption>
+            </figure>
+          </div>
+          <div class="exercise">
+            <h3>实验题</h3>
+            <ul>
+              <li>
+                <p class="question">请写一个程序，该程序输出如下图所示的表格，左边是整数x，右边x的平方</p>
+                <figure>
+                  <picture>
+                    <img src="img/square-table.png" alt="square-table示意图">
+                  </picture>
+                  <figcaption>square-table</figcaption>
+                </figure>
+              </li>
+              <li>
+                <p class="question">请优化给Zeo计算旅费的程序，以下图所示的方式输入输出数据。</p>
+                <figure>
+                  <picture>
+                    <img src="img/zeo-cost-table.png" alt="zeo-cost-table示意图">
+                  </picture>
+                  <figcaption>zeo-cost-table</figcaption>
+                </figure>
+              </li>
+              <li>
+                <p class="question">Zeo的小侄女在学习乘法，请你为她开发一个99乘法表的程序，程序可以输出如下图所示的乘法表：</p>
+                <figure>
+                  <picture>
+                    <img src="img/99-table.png" alt="99乘法表示意图">
+                  </picture>
+                  <figcaption>99乘法表</figcaption>
+                </figure>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div id="c2-for-loop-review" class="topic section" data-title="再谈for循环">
+          <h2>再谈for循环</h2>
+          <p>以下的while循环代码与for循环代码的功能是等价的。与while循环相比，for循环的初始条件、循环判断条件、变量更新语句都在同一行，代码看起来更紧凑。</p>
+          <pre><code class="c++">/* while 循环 */
+int i = 0;
+while (i < n) {
+  /* code */
+  i++;
+}
+
+/* for 循环 */
+for (int i = 0; i < n; i++) {
+  /* code */
+}</code></pre>
+          <p>参考资料：<a href="http://www.zentut.com/c-tutorial/c-for-loop/">c-for-loop</a></p>
+          <div class="exercise">
+            <h3>实验题</h3>
+            <ul>
+              <li>
+                <p>请将上一节的习题用到while循环的代码用for重写一遍，如果用的是for则用while重写一遍。</p>
               </li>
             </ul>
           </div>
