@@ -799,6 +799,64 @@ for (int i = 0; i < n; i++) {
         </div>
       </div>
       <!-- chapter 2 end -->
+
+      <div class="article" id="chapter3" data-title="第 3 章 数组">
+        <p class="pull-right">To dear Sherry</p>
+        <h1>第 3 章 数组</h1>
+        <div id="c3-array-introduction" class="topic section" data-title="关于数组">
+          <h2>关于数组</h2>
+          <p>我们在前一章的Zeo旅费表格习题中遇到一个问题，我们需要在程序中存储Zeo每一天的花费，Zeo的旅行时间为5天，我们可以用5个double型变量在储存Zeo每一天的花费，<code>double cost1, cost2, cost3, cost4, cost5</code>，如果Zeo的旅行时间是100天呢，当然我们可以用100个double型变量如法炮制。这个方法是可行的，不过写起来代码好像有点长，有没有更好的办法呢，C语言有没有为我们提供什么方法，让我们可以更方便地存储这样一列同类型变量呢？</p>
+          <p>有的，C语言提供了一种叫做数组的东西，它可以存储一列同类型的变量。</p>
+          <p>数组有两个特性：</p>
+          <ul>
+            <li><p>相似性。一个数组中所有的元素类型是相同的，例如一个整型的数组，它里面所有的元素都是整型的。</p></li>
+            <li><p>有序性。数组中的元素是有序无间隔排列的。</p></li>
+          </ul>
+          <p>声明一个数组：</p>
+          <figure>
+            <picture>
+              <img src="img/array.png" alt="array">
+            </picture>
+            <figcaption>数组的声明</figcaption>
+          </figure>
+          <p>例如声明一个长度为5的整型数组，<code>int zeoTravelCost[5];</code>，与声明一个变量类似，首先是数组的类型，然后是数组的名称，与声明变量不同的是，数组还要指明数组的长度。</p>
+          <p>声明一个整型变量可以理解为向计算机申请了一个装整型数据的盒子，声明一个长度为5的整型数组，可以想象成是向计算机申请了5个装整型数据的盒子，这5个盒子紧挨着排成一排，从左到右从0依次编号。第i个变量就叫做<code>zeoTravelCost[i]</code>，我们把这个i称之为下标（index）,第i个变量也叫做下标为i的变量。</p>
+          <figure>
+            <picture>
+              <img src="img/zeo-travel-cost.png" alt="zeo-travel-cost">
+            </picture>
+            <figcaption>盒子模型</figcaption>
+          </figure>
+          <div class="exercise">
+            <h3>实验题</h3>
+            <ul>
+              <li>
+                <p class="question">请优化给Zeo计算旅费的程序，该程序首先读入Zeo旅行的天数（不超过20），然后读入Zeo每一天的花费，最后输出Zeo的花费表格（如下图所示）</p>
+                <figure>
+                  <picture>
+                    <img src="img/zeo-cost-table-array.png" alt="zeo-cost-table-program">
+                  </picture>
+                  <figcaption>Zeo Cost Table</figcaption>
+                </figure>
+              </li>
+              <li>
+                <p>已知Zeo在美旅行了总共5天，每一天的旅费分别为<code>123 234 412 323 312</code>，请帮Zeo写一个程序，这个程序可以找到并输出Zeo这5天里花费最多的一天是多少？</p>
+              </li>
+              <li>
+                <p>已知Zeo在美旅行了总共5天，每一天的旅费分别为<code>123 234 412 323 312</code>，请帮Zeo写一个程序，这个程序读入一个整数x，然后输出Zeo这5天中花费第x大的一天的花费是多少？</p>
+                <figure>
+                  <picture>
+                    <img src="img/max-x-cost.png" alt="max-x-cost">
+                  </picture>
+                  <figcaption>Max x Cost</figcaption>
+                </figure>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+      <!-- chapter 3 end -->
     </div>
   </div>
 
