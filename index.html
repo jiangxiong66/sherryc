@@ -877,7 +877,10 @@ for (int i = 0; i &lt; n; i++) {
             </picture>
             <figcaption>数组地址</figcaption>
           </figure>
-          <div class="tip"><p>在C语言中<code>arr[i]</code>与<code>i[arr]</code>是等价的，例如<code>arr[1]</code>写成<code>1[arr]</code>也没有错（不建议这么写哦，很多程序员可不知道有这么回事），因为编译器是把<code>arr[i]</code>翻译成<code>*(arr + i)</code>，把<code>i[arr]</code>翻译成<code>*(i + arr)</code>，而<code>arr + i</code>与<code>i + arr</code>的计算结果是一样的。</p></div>
+          <div class="tip">
+            <p>在C语言中<code>arr[i]</code>与<code>i[arr]</code>是等价的，例如<code>arr[1]</code>写成<code>1[arr]</code>也没有错（不建议这么写哦，很多程序员可不知道有这么回事），因为编译器是把<code>arr[i]</code>翻译成<code>*(arr + i)</code>，把<code>i[arr]</code>翻译成<code>*(i + arr)</code>，而<code>arr + i</code>与<code>i + arr</code>的计算结果是一样的。
+            </p>
+          </div>
           <div class="exercise">
             <ul>
               <li>
@@ -899,6 +902,90 @@ for (int i = 0; i &lt; n; i++) {
         </div> -->
       </div>
       <!-- chapter 3 end -->
+
+      <div class="article" id="chapter4" data-title="第 4 章 函数">
+        <p class="pull-right">To dear Sherry</p>
+        <h1>第 4 章 函数</h1>
+        <div id="c4-function-introduction" class="topic section" data-title="使用函数">
+          <h2>使用函数</h2>
+          <p>前面我们已经学习了C语言的变量、数组、条件语句、循环语句，使用这些知识我们已经可以写出各种各样精巧的程序了。但是随着我们要实现的功能越来越多，我们的代码体积变得越来越庞大，代码结构越来越复杂，我们的代码变得越来越难掌控。为了解决这个问题，C语言提供了函数这个工具。</p>
+          <p>函数是精简代码结构的有力工具。我们将从宏观和微观两个视角来了解函数。从整体上看，函数是把一段代码打包成了一个整体，并给这段代码一个名字，在我们需要这段代码功能的时候，只要调用这个函数便可以了，例如之前章节使用过的输出格式控制函数<code>setw</code>，在我们需要控制输出长度时调用这个函数，程序就可以控制输出格式了。</p>
+          <p>下面我们介绍几个C++ math库的函数，以进一步加深大家对函数使用的了解。</p>
+          <p><a href="http://www.cplusplus.com/reference/cmath/sqrt/">sqrt</a>，这是C语言math库提供的开根号函数（square root function）。math库中的所有函数都可以在C语言文档网站<a href="http://www.cplusplus.com/reference/cmath">www.cplusplus.com</a>上查到。</p>
+          <figure>
+            <picture>
+              <img src="img/sqrt.png" alt="sqrt">
+            </picture>
+            <figcaption>sqrt函数</figcaption>
+          </figure>
+          <p>sqrt函数接受一个double型参数x，最后返回x开根号的值，也是一个double类型。下面用一个实例来展示这个函数的使用方法。</p>
+          <pre><code class="c++">/* sqrt example */
+#include &lt;iostream&gt;
+#include &lt;cmath&gt;
+
+using namespace std;
+
+int main ()
+{
+  double x, result;
+  cout &lt;&lt; "x:";
+  cin &gt;&gt; x;
+  result = sqrt (x);
+  cout &lt;&lt; "The square root of " &lt;&lt; x &lt;&lt; " is " &lt;&lt; result &lt;&lt; endl;
+  return 0;
+}</code></pre>
+          <div class="exercise">
+            <ul>
+              <li>
+                <p class="question">笛卡尔坐标系上的点(x,y)距离坐标系原点的距离为：<img src="http://chart.googleapis.com/chart?cht=tx&chl=distance%20%3D%20%5Csqrt%7Bx%5E2%20%2B%20y%5E2%20%7D%20" style="border:none;" />，请写一个计算坐标系上的点距离原点距离的程序，改程序读入点的坐标数据x和y，输出该点局原点的距离。</p>
+
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div id="c4-function-declaration" class="topic section" data-title="写一个自己的函数">
+          <h2>写一个自己的函数</h2>
+          <p>目前我们调用的函数都是C语言库提供的函数，下面我们来写一个自己的函数。例如写一个华氏度转换摄氏度的函数，这个函数的功能是把华氏温度转化成对应的摄氏温度，因此这个函数应当含有一个参数x接收输入的华氏温度值，这个值应该可以带有小数，所以这个参数x应该是double型的，该函数根据输入的参数计算出对应的摄氏温度后，应当把结果返回给函数的调用者，这个返回值也可能是带有小数的，也应该是double类型的。我们可以把这个函数命名为Fahrenheit2Celsius（2与to谐音）,如下图所示：</p>
+          <figure>
+            <picture>
+              <img src="img/function.png" alt="function">
+            </picture>
+            <figcaption>Fahrenheit degree to Celsius degree function</figcaption>
+          </figure>
+          <p>函数声明最前面的是函数返回值类型，接着是函数名，函数名后面的小括号里是参数列表。一个函数最多只有一个返回值或者没有返回值（也称返回空值，返回值类型为<code>void</code>），但是参数可以有多个，参数列表之后是一对大括号括起来的代码段（也称之为函数体）。当函数被调用时，这段代码就执行，当函数执行到<code>return</code>语句时，函数执行结束并返回，如果函数没有返回值则函数体中也不需要return语句，函数执行完函数体中最后一条语句后自动返回空。</p>
+          <pre><code class="c++">#include &lt;iostream&gt;
+
+using namespace std;
+
+double Fahrenheit2Celsius(double x) {
+  double ans = (x - 32) * 5.0 / 9.0;
+  return ans;
+}
+
+int main()  {
+  double f,c;
+  
+  cout &lt;&lt; "Fahrenheit degree:";
+  cin &gt;&gt; f;
+  
+  c = Fahrenheit2Celsius(f);
+  
+  cout &lt;&lt; "Celsius degreee:" &lt;&lt; c &lt;&lt; endl;
+  return 0;
+}</code></pre>
+          <div class="exercise">
+            <ul>
+              <li>
+                <p class="question">请写一个计算笛卡尔坐标系中两个点(x1,y1)与(x2,y2)之间距离的函数。（<img src="http://chart.googleapis.com/chart?cht=tx&chl=distance%20%3D%20%5Csqrt%7B(x1-x2)%5E2%20%2B%20(y1-y2)%5E2%20%7D%20" style="border:none;" />）</p>
+              </li>
+              <li>
+                <p class="question">请写一个月份数转英语月份的函数，例如5 => May。</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- chapter 4 end -->
     </div>
   </div>
 
