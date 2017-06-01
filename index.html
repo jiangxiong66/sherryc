@@ -500,7 +500,7 @@ int main() {
               <p>Zeo最近去美国旅游，美国的天气预报用的都是华氏温度，Zeo感到非常不习惯，已知华氏度(Fahrenheit)转摄氏度(Celsius)的公式为：<p>
               <figure style="border:none;">
                 <picture>
-                  <img src="http://chart.googleapis.com/chart?cht=tx&chl=C%3D%5Cfrac%7B5%7D%7B9%7D%5Ctimes%20(F-32)" style="border:none;" alt="C=(F-32)*5/9" />
+                  <img src="img/formula/f2c.png" style="border:none;" alt="C=(F-32)*5/9" />
                 </picture>
               </figure>
               <p>请你为Zeo写一个将华氏度转换为摄氏度的程序，该程序读入一个华氏度数据，输出其对应的摄氏温度。（参考资料1：<a href="https://zh.wikipedia.org/wiki/%E5%8D%8E%E6%B0%8F%E6%B8%A9%E6%A0%87">华氏温标</a>）</p>
@@ -952,7 +952,7 @@ int main ()
             </picture>
             <figcaption>Fahrenheit degree to Celsius degree function</figcaption>
           </figure>
-          <p>函数声明最前面的是函数返回值类型，接着是函数名，函数名后面的小括号里是参数列表。一个函数最多只有一个返回值或者没有返回值（也称返回空值，返回值类型为<code>void</code>），但是参数可以有多个，参数列表之后是一对大括号括起来的代码段（也称之为函数体）。当函数被调用时，这段代码就执行，当函数执行到<code>return</code>语句时，函数执行结束并返回，如果函数没有返回值则函数体中也不需要return语句，函数执行完函数体中最后一条语句后自动返回空。</p>
+          <p>函数声明最前面的是函数返回值类型，接着是函数名，函数名后面的小括号里是参数列表。一个函数最多只有一个返回值或者没有返回值（也称返回空值，返回值类型为<code>void</code>），函数的参数可以有0个或是多个，参数列表之后是一对大括号括起来的代码段（也称之为函数体）。当函数被调用时，这段代码就执行，当函数执行到<code>return</code>语句时，函数执行结束并返回，如果函数没有返回值则函数体中也不需要return语句，函数执行完函数体中最后一条语句后自动返回空。</p>
           <pre><code class="c++">#include &lt;iostream&gt;
 
 using namespace std;
@@ -976,11 +976,96 @@ int main()  {
           <div class="exercise">
             <ul>
               <li>
-                <p class="question">请写一个计算笛卡尔坐标系中两个点(x1,y1)与(x2,y2)之间距离的函数。（<img src="http://chart.googleapis.com/chart?cht=tx&chl=distance%20%3D%20%5Csqrt%7B(x1-x2)%5E2%20%2B%20(y1-y2)%5E2%20%7D%20" style="border:none;" />）</p>
+                <p class="question">请写一个计算笛卡尔坐标系中两个点(x1,y1)与(x2,y2)之间距离的函数。（<img src="img/formula/distance.png" style="border:none;" />）</p>
               </li>
               <li>
-                <p class="question">请写一个月份数转英语月份的函数，例如5 => May。</p>
+                <p class="question">请写一个月份数转英语月份的函数MonthName，例如5 => May。</p>
               </li>
+              <li>
+                <p class="question">请写一个计算n的阶乘的函数。<img src="img/formula/factor.png" style="border:none;" /></p>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div id="c4-function-internal" class="topic section" data-title="函数调用机制">
+          <h2>函数调用机制</h2>
+          <h3>变量的作用域</h3>
+          <p>C语言中，函数中声明的变量只在该函数内有效，函数中声明的变量也称之为局部变量，例如以下代码中，main函数与TestScope函数中都定义了名为x的整型变量，这两个变量是相互独立的，在TestScope函数中只能访问到TestScope中声明的x，在main函数中只能访问到main函数中声明的x。请编译运行以下代码，观察运行结果。</p>
+          <p>参考资料<a href="https://www.tutorialspoint.com/cprogramming/c_scope_rules.htm">C - Scope Rules</a></p>
+          <pre><code class="c++">#include &lt;iostream&gt;
+
+using namespace std;
+
+void TestScope() {
+  int x = 2;
+  cout &lt;&lt; "[Function TestScope] " &lt;&lt; "x = " &lt;&lt; x &lt;&lt; endl;
+}
+
+int main() {
+  int x = 1;
+  TestScope();
+  cout &lt;&lt; "[Function main] " &lt;&lt; "x = " &lt;&lt; x &lt;&lt; endl;
+  return 0;
+}
+</code></pre>
+          <h3>函数参数的传递</h3>
+          <p>函数的参数也可以看做是该函数的局部变量，它们只在该函数的内部可以访问。函数被调用时，调用者给定的参数<strong>值</strong>会被赋值给函数对应的参数。</p>
+          <p>我们之前说过变量就像一个装数据的盒子，这些盒子都在内存里面，由操作系统管理着，那么操作系统是怎样管理这些盒子的呢？对于函数中声明的变量，例如下面代码中Factorial函数里的变量product，程序刚运行时，操作系统并没有给product分配内存（没有指定任何盒子给product使用），当程序运行到<code>Factorial(i)</code>时，操作系统才会去内存中找空盒子指定给Factorial函数中的变量使用，但函数调用结束后，操作系统又会把这些盒子（内存空间）收回来。即函数只有在被调用执行时，函数中的变量才会正真占用内存。</p>
+          <pre><code class="c++">#include &lt;iostream&gt;
+
+using namespace std;
+
+int Factorial(int n) {
+  int i, product;
+  product = 1;
+  for(i = 1; i &lt;= n; i++) {
+    product *= i;
+  }
+  return product;
+}
+
+int main() {
+  for(int i = 0; i &lt;= 5; i++) {
+    cout &lt;&lt; "Factorial( " &lt;&lt; i &lt;&lt; " ) = " &lt;&lt; Factorial(i) &lt;&lt; endl;
+  }
+  return 0;
+}</code></pre>
+        </div>
+        <div id="c4-top-down" class="topic section" data-title="自顶向下，逐步解决">
+          <h2>自顶向下，逐步解决</h2>
+          <p>当我们面对一个很大很复杂的问题时，我们可以把这个问题先划分成几个小一点的问题或步骤，这些步骤我们可以先用函数表示出来，然后再逐个完成这些函数，我们的整个问题便解决了。这种分解问题办法是非常强大的，计算机科学使用这种办法设计出了人类最复杂的系统。下面我们用一个实例来学习一下这种方法。例如，写一个日历程序，该程序输入一个年份便可输出这一年每个月的日期和星期。如下图所示(只截取了1月和2月的部分)：</p>
+          <figure>
+            <picture>
+              <img src="img/calendar.png" alt="calender">
+            </picture>
+            <figcaption>Calendar</figcaption>
+          </figure>
+          <p>这个日历看起来是不是很酷，怎么实现的呢？感觉挺复杂的样子。是不是感觉一头雾水，无从下手？让我们一层一层解开这个问题吧。</p>
+          <p>首先，我们可以想到，这个程序读入了一个年份，然后输出了这一年的日历。怎么写呢？读入一个年份我们已经会写了，输出这一年的日历好像有点复杂，还不知道怎么写。好，那就先把我们知道的写下来。</p>
+          <pre><code class="c++">int main() {
+  int year;
+
+  /* read the year */
+  cout &lt;&lt; "year:";
+  cin &gt;&gt; year;
+
+  /* print the calendar of the year */
+  PrintCalendar(year);
+
+  return 0;
+}</code></pre>
+          <p>很漂亮的代码，读入年份，调用日历打印函数，输出该年份的日历，很和谐很科学。假如我们有一个这样的日历打印函数PrintCalendar，显然我们的代码就已经完成了，bingo。现在我们还没有一个可以真正使用的PrintCalendar函数，那下面我们就来写一个吧。这个PrintCalendar函数接受一个年份作为输入参数，然后打印出这一年每个月的日历，所以我们的PrintCalendar可以写成下面这个样子。它接受一个整型的参数year，for循环从1月至12月逐个输出每个月的日历。</p>
+          <pre><code class="c++">void PrintCalendar(int year) {
+  for(int month = 1; month &lt;= 12; month++) {
+    PrintCalendarMonth(year, month);
+    cout &lt;&lt; endl;
+  }
+}</code></pre>
+          <div class="exercise">
+            <h3>练习题</h3>
+            <ul>
+              <li><p>请思考一下PrintCalendarMonth函数该如何实现。</p></li>
             </ul>
           </div>
         </div>
