@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="css/normalize.css">
+  <style type="text/css">
+    .container {
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    html, body, img {
+      width: 100%;
+    }
+  </style>
+</head>
+<body class="container">
+<div id="nav"></div>
+<div id="main"></div>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+  var files = ['11-130325093337.jpg'];
+  var dirs = [];
+  var main = $("#main");
+  var nav = $("#nav");
+  files.forEach(function(item) {
+    main.append($('<img>', {
+      src: './'+item
+    }));
+  });
+  dirs.forEach(function(item) {
+    nav.append($('<a>', {
+      href: './' + item + '/index.html',
+      text: item
+    }));
+  });
+</script>
+</script>
+</body>
+</html>
