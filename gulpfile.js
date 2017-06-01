@@ -8,12 +8,23 @@ var eslint = require('gulp-eslint');
 var jasmine = require('gulp-jasmine-phantom');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
+var gwatch = require('gulp-watch');
 
 gulp.task('default', ['copy-html', 'copy-images', 'copy-vendor', 'styles', 'lint', 'scripts'], function() {
     gulp.watch('sass/**/*.scss', ['styles']).on('end', browserSync.reload);
     gulp.watch('js/**/*.js', ['lint', 'scripts']).on('end', browserSync.reload);
     gulp.watch('./index.html', ['copy-html']).on('end', browserSync.reload);
     gulp.watch('./dist/index.html').on('change', browserSync.reload);
+
+    gwatch('img/**/*', function() {
+        console.log('copy images');
+        gulp.start('copy-images');
+    });
+
+    gwatch('vendor/**/*', function() {
+        console.log('copy vendor');
+        gulp.start('copy-vendor');
+    });
 
     browserSync.init({
         server: './dist'
@@ -48,7 +59,7 @@ gulp.task('copy-html', function() {
 });
 
 gulp.task('copy-images', function() {
-    gulp.src('img/*')
+    gulp.src('img/**/*')
         .pipe(gulp.dest('dist/img'));
 });
 
