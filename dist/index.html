@@ -937,7 +937,7 @@ int main ()
           <div class="exercise">
             <ul>
               <li>
-                <p class="question">笛卡尔坐标系上的点(x,y)距离坐标系原点的距离为：<img src="http://chart.googleapis.com/chart?cht=tx&chl=distance%20%3D%20%5Csqrt%7Bx%5E2%20%2B%20y%5E2%20%7D%20" style="border:none;" />，请写一个计算坐标系上的点距离原点距离的程序，改程序读入点的坐标数据x和y，输出该点局原点的距离。</p>
+                <p class="question">笛卡尔坐标系上的点(x,y)距离坐标系原点的距离为：<img src="http://chart.googleapis.com/chart?cht=tx&chl=distance%20%3D%20%5Csqrt%7Bx%5E2%20%2B%20y%5E2%20%7D%20" style="border:none;" alt="distance" />，请写一个计算坐标系上的点距离原点距离的程序，改程序读入点的坐标数据x和y，输出该点局原点的距离。</p>
 
               </li>
             </ul>
@@ -964,25 +964,25 @@ double Fahrenheit2Celsius(double x) {
 
 int main()  {
   double f,c;
-  
+
   cout &lt;&lt; "Fahrenheit degree:";
   cin &gt;&gt; f;
-  
+
   c = Fahrenheit2Celsius(f);
-  
+
   cout &lt;&lt; "Celsius degreee:" &lt;&lt; c &lt;&lt; endl;
   return 0;
 }</code></pre>
           <div class="exercise">
             <ul>
               <li>
-                <p class="question">请写一个计算笛卡尔坐标系中两个点(x1,y1)与(x2,y2)之间距离的函数。（<img src="img/formula/distance.png" style="border:none;" />）</p>
+                <p class="question">请写一个计算笛卡尔坐标系中两个点(x1,y1)与(x2,y2)之间距离的函数。（<img src="img/formula/distance.png" style="border:none;" alt="distance formula" />）</p>
               </li>
               <li>
                 <p class="question">请写一个月份数转英语月份的函数MonthName，例如5 => May。</p>
               </li>
               <li>
-                <p class="question">请写一个计算n的阶乘的函数。<img src="img/formula/factor.png" style="border:none;" /></p>
+                <p class="question">请写一个计算n的阶乘的函数。<img src="img/formula/factor.png" style="border:none;" alt="factor formula" /></p>
               </li>
             </ul>
           </div>
@@ -1068,7 +1068,149 @@ int main() {
               <li><p>请思考一下PrintCalendarMonth函数该如何实现。</p></li>
             </ul>
           </div>
+          <P>PrintCalendarMonth函数该怎样实现呢，我们先看看这个函数需要做些什么事情，首先，PrintCalendarMonth函数需要输出年份和月份名，紧接着是输出了一个表头<code>Su Mo Tu We Th Fr Sa</code>，最后是按格式输出这个月的每一个日期。因此这个函数需要完成三个步骤，可以用代码表示如下：</P>
+          <pre><code class="c++">void PrintCalendarMonth(int year, int month) {
+  cout &lt;&lt; setw(10) &lt;&lt; MonthName(month) &lt;&lt; " " &lt;&lt; year &lt;&lt; endl;
+  cout &lt;&lt; "Su Mo Tu We Th Fr Sa" &lt;&lt; endl;
+  /* Output date in the properly way */
+}</code></pre>
+          <p>前两个步骤，输出月份年份和输出表头，都很容实现。最后一步，按日历的格式输出日期，看起来有点复杂。我们来仔细考虑一下，输出一个这样的日历需要哪些信息。输出这一个月的所有日期，首先我们需要知道这个月有多少天，那我们先假设有一个函数DaysOfMonth可以获取到某年某个月的总天数。另外一个问题就是，输出的日期是星期几要和表头对应上，怎样才能对应上呢，如果我们知道每一个日期是星期几这个问题就解决了，所以不妨假设有一个函数GetWeekday，它可以计算出某年某月某日是星期几。我们再仔细观察一下这个日历，发现其实只要计算出这个月的1号是星期几，然后依次输出每一个日期就可以了。</p>
+          <div class="tip">
+            <p>代码中有尚未实现的函数，该怎样测试当前已有的代码呢？</p>
+            <p>一个比较好的办法是使用一种叫桩函数的方法，例如以上代码中的GetWeekday函数，在实现前我们可以先写一个这样的桩函数：</p>
+            <pre><code>int GetWeekday(int year, int month, int day) {
+  return 4;
+}</code></pre>
+            <p>把尚未实现的函数都写成这样的桩函数，代码就可以正常编译运行了。</p>
+          </div>
+          <div class="exercise">
+            <h3>练习题</h3>
+            <ul>
+              <li>
+                <p class="question">假设已知函数<code>int DaysOfMonth(int year, int month);</code>接受参数year和month并返回年份为year月份为month的总天数；函数<code>int GetWeekday(int year, int month, int day);</code>接受参数year、month、day并返回该日期的星期数，返回值类型为整型，0代表星期天、1代表星期一...依次类推，6代表星期六。请你完成函数最后日历输出部分的代码。</p>
+                <pre><code class="c++">void PrintCalendarMonth(int year, int month) {
+  cout &lt;&lt; setw(10) &lt;&lt; MonthName(month) &lt;&lt; " " &lt;&lt; year &lt;&lt; endl;
+  cout &lt;&lt; "Su Mo Tu We Th Fr Sa" &lt;&lt; endl;
+  int days = DaysOfMonth(year, month);
+  int currentWeekday = GetWeekday(year, month, 1);
+  /* Output date in the properly way */
+}</code></pre>
+              </li>
+              <li>
+                <p class="question">请实现函数<code>int DaysOfMonth(int year, int month);</code>，该函数返回指定年份月份的天数。参考资料：<a href="https://en.wikipedia.org/wiki/Month">Month</a> | 参考资料：<a href="https://zh.wikipedia.org/wiki/%E9%97%B0%E5%B9%B4">闰年</a>
+                </p>
+              </li>
+              <li>
+                <p class="question">请实现函数<code>int GetWeekday(int year, int month, int day);</code>，该函数返回1970年1月1日之后日期的星期数。（已知1970年1月1日是星期四）
+                </p>
+              </li>
+              <li>
+                <p class="question">请完成整个<code>PrintCalendar</code>函数的实现。</p>
+              </li>
+            </ul>
+          </div>
+          <div style="display: none;">
+            <p>Calendar 参考程序完整代码：</p>
+            <pre><code class="c++">#include &lt;iostream&gt;
+#include &lt;iomanip&gt;
+#include &lt;string&gt;
+
+using namespace std;
+
+const int SU = 0;
+const int MO = 1;
+const int TU = 2;
+const int WE = 3;
+const int TH = 4;
+const int FR = 5;
+const int SA = 6;
+
+string MonthName(int month) {
+  string monthName[12] = {
+    "January", "Februray", "March",
+    "April",   "May",      "June",
+    "July",    "Augest",   "Septemper",
+    "October", "November", "December"};
+  return monthName[month - 1];
+}
+
+bool isLeapYear(int year) {
+  return year % 400 == 0 || (year % 100 !=0 &amp;&amp; year % 4 == 0);
+}
+
+int DaysOfMonth(int year, int month) {
+  int days[12] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+  int ans = days[month-1];
+
+  if(month == 2 &amp;&amp; isLeapYear(year)) {
+    ans = ans + 1;
+  }
+  return ans;
+}
+
+int DaysOfYear(int year) {
+  if(isLeapYear(year)) return 366;
+  return 365;
+}
+
+int GetWeekday(int year, int month, int day) {
+  if(year == 1970 &amp;&amp; month == 1 &amp;&amp; day == 1) return 4;
+
+  int daysPassed = 0;
+  for(int i = 1970; i &lt; year; i++) {
+    daysPassed += DaysOfYear(i);
+  }
+
+  for(int i = 1; i &lt; month; i++) {
+    daysPassed += DaysOfMonth(year, i);
+  }
+
+  daysPassed += day;
+  return (3 + daysPassed) % 7;
+}
+
+void PrintCalendarMonth(int year, int month) {
+  cout &lt;&lt; setw(10) &lt;&lt; MonthName(month) &lt;&lt; " " &lt;&lt; year &lt;&lt; endl;
+  cout &lt;&lt; "Su Mo Tu We Th Fr Sa" &lt;&lt; endl;
+
+  int days = DaysOfMonth(year, month);
+  int weekday = GetWeekday(year, month, 1);
+
+  for(int i = 0; i &lt; weekday; i++) {
+    cout &lt;&lt; "   ";
+  }
+
+  for(int day = 1; day &lt;= days; day++) {
+    cout &lt;&lt; setw(2) &lt;&lt; day &lt;&lt; " ";
+    if(weekday == SA) cout &lt;&lt; endl;
+    weekday = (weekday + 1) % 7;
+  }
+  if(weekday !=0 ) cout &lt;&lt; endl;
+  cout &lt;&lt; "--------------------" &lt;&lt; endl;
+}
+
+void PrintCalendar(int year) {
+  for(int month = 1; month &lt;= 12; month++) {
+    PrintCalendarMonth(year, month);
+    cout &lt;&lt; endl;
+  }
+}
+
+int main() {
+  int year;
+
+  /* read the year */
+  cout &lt;&lt; "year:";
+  cin &gt;&gt; year;
+
+  /* print the calendar of the year */
+  PrintCalendar(year);
+
+  return 0;
+}</code></pre>
+          </div>
         </div>
+
       </div>
       <!-- chapter 4 end -->
     </div>
